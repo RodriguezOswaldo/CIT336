@@ -7,6 +7,7 @@
     <title>Home | Acme</title>
     <style> 
     body{
+        
         background-image:url(background.jpg);
         background-size: cover; 
         background-attachment: fixed;
