@@ -11,9 +11,9 @@
         background-size: cover; 
         background-attachment: fixed;
     }
-    .content{
+     .content{
         background: white;
-        width:70%;
+        width:80%;
         padding:10px;
         margin:50px auto; 
     }
@@ -21,28 +21,55 @@
         font-size:20px;
         color:black;
     }
+    .logo{
+        font-size: 70px;
+    }
     </style>
 </head>
 <body>
     <div class="content">
         <header>
-            <img src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
-            <img src="" alt="My Account Folder">
+            <img class="logo" src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
+            <img class="imageAccount" src="/dashboard/acme/images/site/account.jpg" alt="My Account Folder">
         </header>
+        <nav id="primaryNav" class="">
+             <ul>
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#" >Cannon</a>
+                </li>
+                <li>
+                    <a href="#">Explosive</a>
+                </li>
+                <li>
+                    <a href="#">Misc</a>
+                </li>
+                <li>
+                    <a href="#">Rocket</a>
+                </li>
+                <li>
+                    <a href="#">Trap</a>
+                </li>
+            </ul>
+        </nav>
         <main>
             <h2>Welcome To Acme</h2>
             <div>
-            
-                <img src="" alt="">
+                <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket">
                 <aside>
                     <h2>Acme Rocket</h2>
                     <p>Quick lighting fuse </p>
                     <p>NTHSA approved seat belts MO</p>
-                    <p>Mobile launch stand included</p>
-                    
-                    <a href="#"><img href="#" src="" alt="I want it now button!"></a>
+                    <p>Mobile launch stand included</p>                    
+                    <a href="#"><img src="/dashboard/acme/images/site/iwantit.jpg" alt="I want it now button!"></a>
                 </aside>
             </div>
+
+            <section>
+                <p>Content to be filled</p>
+            </section>
         </main>
         
     
