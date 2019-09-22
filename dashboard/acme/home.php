@@ -44,8 +44,7 @@
         </nav>
         <main>
             <h2>Welcome To Acme</h2>
-            <div>
-                <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket">
+            <section class="showcase" alt="Coyote with a Rocket">
                 <aside>
                     <h2>Acme Rocket</h2>
                     <p>Quick lighting fuse </p>
@@ -53,10 +52,10 @@
                     <p>Mobile launch stand included</p>                    
                     <a href="#"><img src="/dashboard/acme/images/site/iwantit.jpg" alt="I want it now button!"></a>
                 </aside>
-            </div>
+            </section>
 
             <section>
-                <p>Content to be filled</p>
+                <p>Content to be added</p>
             </section>
         </main>
         

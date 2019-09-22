@@ -58,3 +58,11 @@ header{
     color: var(--fifth);
     background: var(--sixth);
 }
+.showcase{
+    min-height: 100px;
+    background:url("/dashboard/acme/images/site/rocketfeature.jpg");
+    background-size:cover;
+    background-position: center; 
+    padding:30px;
+    
+}
