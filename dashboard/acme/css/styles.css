@@ -17,14 +17,16 @@ body{
 }
  .content{
     background: var(--sixth);
-    width:80%;
+    width:90%;
     margin:0 auto;
 }
 p{
     font-size:20px;
     color:var(--first);
 }
-
+header{
+    display: flex;
+}
 .logo{
     transform: scale(0.4);
     position: relative;
@@ -34,9 +36,24 @@ p{
     transform: scale(0.5);
 }
 #navigation{
-    background: #de2226;
-    padding:20px;
+    background: var(--fifth);
+    padding:7px;
 }
 #navigation ul{
     display: flex;
+}
+#navigation ul li{
+    list-style: none;
+    margin-right: 0.5em;
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    font-size: 2em;
+    padding: 20px;
+    color: var(--sixth);
+}
+#navigation ul li a.active{
+    color: var(--fifth);
+    background: var(--sixth);
 }

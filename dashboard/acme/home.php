@@ -15,7 +15,10 @@
     <div class="content">
         <header>
             <img class="logo" src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
+            <div>
             <img class="account" src="/dashboard/acme/images/site/account.jpg" alt="My Account Folder">
+            <span>My Account</span>
+            </div>
         </header>
         <nav id="navigation" class="">
              <ul>
@@ -42,7 +45,7 @@
         <main>
             <h2>Welcome To Acme</h2>
             <div>
-                <!-- <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket"> -->
+                <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket">
                 <aside>
                     <h2>Acme Rocket</h2>
                     <p>Quick lighting fuse </p>
