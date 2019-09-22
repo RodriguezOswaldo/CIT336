@@ -26,6 +26,7 @@ p{
 }
 header{
     display: flex;
+    justify-content: space-around;
 }
 .logo{
     transform: scale(0.4);
@@ -33,7 +34,7 @@ header{
     left: 0;
 }
 .account{
-    transform: scale(0.5);
+    transform: scale(0.2);
 }
 #navigation{
     background: var(--fifth);
