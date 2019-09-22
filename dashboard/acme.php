@@ -13,10 +13,10 @@
         background-attachment: fixed;
     }
     .content{
-        background: yellow;
-        width:50%;
-        padding:40px;
-        margin:100px auto; 
+        background: white;
+        width:70%;
+        padding:10px;
+        margin:50px auto; 
     }
     p{
         font-size:20px;
@@ -33,6 +33,9 @@
          usto ex deleniti, earum facilis maiores? Nemo itaque exceptur
          i quae. Nihil error adipisci libero quasi itaque placeat l
         aboriosam dolor possimus! Illo harum pariatur cupiditate?
+        </p>
+        <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas eligendi nemo veniam quam labore accusantium delectus voluptatum provident! Quibusdam fugit molestias eum placeat a quaerat. Atque ab, tempore tenetur officiis iusto autem hic repudiandae, ipsa ex, officia porro cupiditate excepturi. Atque soluta tempore ducimus voluptatum modi ipsum repellendus voluptatem inventore!
         </p>
         
         </div>
