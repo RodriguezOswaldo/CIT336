@@ -47,9 +47,9 @@
             <section class="showcase" alt="Coyote with a Rocket">
                 <aside>
                     <h2>Acme Rocket</h2>
-                    <p>Quick lighting fuse </p>
-                    <p>NTHSA approved seat belts MO</p>
-                    <p>Mobile launch stand included</p>                    
+                    <span>Quick lighting fuse </span><br>
+                    <span>NTHSA approved seat belts MO</span><br>
+                    <span>Mobile launch stand included</span><br>                    
                     <a href="#"><img src="/dashboard/acme/images/site/iwantit.jpg" alt="I want it now button!"></a>
                 </aside>
             </section>
