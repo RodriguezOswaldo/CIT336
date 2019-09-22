@@ -7,7 +7,7 @@
     <title>Home | Acme</title>
     <style> 
     body{
-        background-image:url(/dashboard/acme/images/background.jpg);
+        background-image:url(/dashboard/acme/images/site/background.jpg);
         background-size: cover; 
         background-attachment: fixed;
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="content">
         <header>
-            <img src="" alt="Acme Logo">
+            <img src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
             <img src="" alt="My Account Folder">
         </header>
         <main>
