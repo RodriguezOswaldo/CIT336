@@ -1,0 +1,42 @@
+:root {
+    --first: #000;
+    --second: #00e;
+    --third: #808080;
+    --fourth:#903;
+    --fifth: #de2226;
+    --sixth:#fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+body{
+    background-image:url(/dashboard/acme/images/site/background.jpg);
+    background-size: cover; 
+    background-attachment: fixed;
+    padding: 0;
+    margin:0;
+}
+ .content{
+    background: var(--sixth);
+    width:80%;
+    margin:0 auto;
+}
+p{
+    font-size:20px;
+    color:var(--first);
+}
+
+.logo{
+    transform: scale(0.4);
+    position: relative;
+    left: 0;
+}
+.account{
+    transform: scale(0.5);
+}
+#navigation{
+    background: #de2226;
+    padding:20px;
+}
+#navigation ul{
+    display: flex;
+}

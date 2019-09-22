@@ -4,35 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
+    <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <title>Home | Acme</title>
     <style> 
-    body{
-        background-image:url(/dashboard/acme/images/site/background.jpg);
-        background-size: cover; 
-        background-attachment: fixed;
-    }
-     .content{
-        background: white;
-        width:80%;
-        padding:10px;
-        margin:50px auto; 
-    }
-    p{
-        font-size:20px;
-        color:black;
-    }
-    .logo{
-        font-size: 70px;
-    }
+   
     </style>
 </head>
 <body>
     <div class="content">
         <header>
             <img class="logo" src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
-            <img class="imageAccount" src="/dashboard/acme/images/site/account.jpg" alt="My Account Folder">
+            <img class="account" src="/dashboard/acme/images/site/account.jpg" alt="My Account Folder">
         </header>
-        <nav id="primaryNav" class="">
+        <nav id="navigation" class="">
              <ul>
                 <li>
                     <a href="#" class="active">Home</a>
@@ -57,7 +42,7 @@
         <main>
             <h2>Welcome To Acme</h2>
             <div>
-                <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket">
+                <!-- <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt="Coyote on the Rocket"> -->
                 <aside>
                     <h2>Acme Rocket</h2>
                     <p>Quick lighting fuse </p>
@@ -72,8 +57,13 @@
             </section>
         </main>
         
-    
+     <footer>
+     <hr>
+    &copy; ACME, All rights reserved.
+All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.
+    </footer>
     </div>
+   
     <script>    
     /* Actual text
     =====================
