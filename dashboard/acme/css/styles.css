@@ -14,6 +14,7 @@ body{
     background-attachment: fixed;
     padding: 0;
     margin:0;
+    line-height: 1.5;
 }
  .content{
     background: var(--sixth);
@@ -57,7 +58,6 @@ header{
     margin-right: 0.5em;
     display: block;
 }
-
 #navigation ul li a {
     text-decoration: none;
     font-size: 1em;
@@ -77,4 +77,28 @@ header{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.showcase ul li{
+    list-style: none;
+    display: block;
+}
+.section1{
+    display: flex;
+}
+.article{
+    width:50%;
+    height: auto;
+}
+.article1 div ul li  {
+    flex-wrap: wrap-reverse;
+}
+.article1 ul li{
+    list-style: none;
+}
+hr{
+    border: 2px solid #000;
+}
+footer{
+    font-size: smaller;
+    text-align: center;
 }
