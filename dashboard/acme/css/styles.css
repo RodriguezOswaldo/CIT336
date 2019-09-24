@@ -12,13 +12,14 @@ body{
     background-image:url(/dashboard/acme/images/site/background.jpg);
     background-size: cover; 
     background-attachment: fixed;
-    background-size: contain;
+    background-size: auto; 
     padding: 0;
     margin:0;
     line-height: 1.5;
     font-family: 'Mansalva', cursive;
 }
  .content{
+    display: grid;
     background: var(--sixth);
     width:97%;
     margin:0 auto;
@@ -96,6 +97,12 @@ header{
 .article1 div{
     column-count: 2;
 }
+.article1{
+    grid-area: article1;
+}
+.article2{
+    grid-area: article2;
+}
 .article div div{
     column-count: 1;
     justify-content: center;
@@ -114,4 +121,18 @@ footer{
     font-size: smaller;
     text-align: center;
     font-weight: bolder;
+}
+@media(max-width:700px){
+    .article{
+        width:100%;
+    }
+    .section1{
+        display: grid;
+        grid-template-areas: 
+        'article2'
+        'article1';
+    }
+    .article2, .article1{
+        margin-left:10%;
+    }
 }
