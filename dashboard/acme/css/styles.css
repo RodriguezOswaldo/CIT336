@@ -12,14 +12,17 @@ body{
     background-image:url(/dashboard/acme/images/site/background.jpg);
     background-size: cover; 
     background-attachment: fixed;
+    background-size: contain;
     padding: 0;
     margin:0;
     line-height: 1.5;
+    font-family: 'Mansalva', sans-serif;
 }
  .content{
     background: var(--sixth);
     width:97%;
     margin:0 auto;
+    box-shadow: 5px 5px 5px rgba(104, 104, 104, 0.8);
 }
 p{
     font-size:20px;
@@ -87,29 +90,28 @@ header{
 }
 .article{
     width:50%;
-    height: auto;
-}
-.article1 img:after{
-    content: "";
-    position: absolute;
-            top:0;
-            left: 20px;
-            width: 50%;
-            height: 100%;
-            background: rgba(255,255,255, 0.05);
+    margin: 12px;
+    margin-top:2px;
 }
 .article1 div{
     column-count: 2;
 }
+.article div div{
+    column-count: 1;
+    justify-content: center;
+
+}
 .article1 div div img{
     display: flex;
     margin: 5px;
-    box-shadow: 2px 8px 2px rgba(104, 104, 104, 0.8);
+    box-shadow: 2px 2px 2px rgba(104, 104, 104, 0.8);
 }
+
 hr{
     border: 2px solid #000;
 }
 footer{
     font-size: smaller;
     text-align: center;
+    font-weight: bolder;
 }
