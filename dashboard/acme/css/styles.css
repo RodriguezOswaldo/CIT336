@@ -26,13 +26,24 @@ p{
 }
 header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: center;
+    padding: 6px;
+
 }
 .logo{
-    transform: scale(0.4);
+    width: 150px;
+    margin:0.7em;
 }
-.account{
-    transform: scale(0.2);
+.myAccount{
+    margin-top: 28px;
+    margin-left: 1rem;
+}
+.myAccount img{
+    width: 35px;
+}
+#myAccount{
+    font-size: 2.5em
 }
 #navigation{
     background: var(--fifth);
