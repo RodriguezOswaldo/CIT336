@@ -132,7 +132,13 @@ footer{
         'article2'
         'article1';
     }
-    .article2, .article1{
+    .article2{
+        margin:0;
+    }
+    .article2 div, .article1{
         margin-left:10%;
+    }
+    .article2{
+        background: #F6F098;
     }
 }
