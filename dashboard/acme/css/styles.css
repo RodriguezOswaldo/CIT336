@@ -45,6 +45,7 @@ p{
     color: #000;
 }
 #header a:hover{
+    background: #808080; 
     color: brown;
 }
 .myAccount{
