@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam|Roboto&display=swap" rel="stylesheet">
-    <style>
-
-    </style>
 </head>
 
 <body>

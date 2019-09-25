@@ -40,6 +40,13 @@ p{
     height: 3em;
     margin:0.7em;
 }
+#header a:focus{
+    background: #808080; 
+    color: #000;
+}
+#header a:hover{
+    color: brown;
+}
 .myAccount{
     margin-top: 15px;
 }
@@ -67,6 +74,20 @@ p{
     padding-right: 0.5em;
     padding-left: 0.5em;
     color: var(--sixth); 
+}
+#navigation ul li a:link{
+
+}
+#navigation ul li a:visited{
+
+}
+#navigation ul li a:focus{
+    background: #808080; 
+    color: #000;
+}
+#navigation ul li a:hover{
+    background: var(--sixth);
+    color: var(--fifth);
 }
 #navigation ul li a.active{
     color: var(--fifth);
@@ -118,8 +139,8 @@ p{
     background: #808080;
     width: 6em;
 }
-.article1 div div a{
-    word-wrap:normal; 
+.article1 a:hover{
+    color: brown;
 }
 hr{
     border: 2px solid #000;
@@ -128,6 +149,7 @@ footer{
     font-size: smaller;
     text-align: center;
 }
+
 @media(max-width:700px){
     .article{
         width:100%;
@@ -143,8 +165,5 @@ footer{
     }
     .article2 div, .article1{
         margin-left:10%;
-    }
-    .article2{
-        background: #F6F098;
     }
 }
