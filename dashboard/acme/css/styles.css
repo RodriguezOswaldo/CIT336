@@ -29,15 +29,14 @@ p{
     font-size:20px;
     color:var(--first);
 }
-#header{
+header{
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    padding:4px;
+    padding:0px;
 }
 #header .logo{
-    width:9em;
-    height: 3em;
+    width:10em;
+    height: 4em;
     margin:0.7em;
 }
 #header a:focus{
