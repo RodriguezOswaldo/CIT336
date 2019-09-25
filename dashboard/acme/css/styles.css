@@ -24,6 +24,7 @@ body{
     width:97%;
     margin:0 auto;
     box-shadow: 5px 5px 5px var(--shadow);
+    text-align: center;
 }
 p{
     font-size:20px;
@@ -34,7 +35,6 @@ header{
     justify-content: space-between;
     align-content: center;
     padding: 6px;
-
 }
 .logo{
     width: 150px;
@@ -93,6 +93,7 @@ header{
     width:50%;
     margin: 12px;
     margin-top:2px;
+    text-align: initial;
 }
 .article1 div{
     column-count: 2;
@@ -105,8 +106,8 @@ header{
 }
 .article div div{
     column-count: 1;
+    margin: 0;
     justify-content: center;
-
 }
 .article1 div div img{
     display: flex;
@@ -115,8 +116,11 @@ header{
     padding-left: 20px;
     padding-right: 20px;
     background: #808080;
+    width: 6em;
 }
-
+.article1 div div a{
+    word-wrap:normal; 
+}
 hr{
     border: 2px solid #000;
 }

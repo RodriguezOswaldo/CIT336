@@ -1,50 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
-    <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Mansalva|Roboto+Slab&display=swap" rel="stylesheet">    <title>Home | Acme</title>
-    <style>
-
-    </style>
-</head>
-
-<body>
-    <div class="content">
-        <header>
-            <img class="logo" src="/dashboard/acme/images/site/logo.jpg" alt="Acme Logo">
-            <div class="myAccount">
-                <img class="account" src="/dashboard/acme/images/site/account.jpg" alt="My Account Folder"> <span>My
-                    Account</span>
-            </div>
-        </header>
-        <nav id="navigation" class="">
-            <ul>
-                <li>
-                    <a href="#" class="active">Home</a>
-                </li>
-                <li>
-                    <a href="#">Cannon</a>
-                </li>
-                <li>
-                    <a href="#">Explosive</a>
-                </li>
-                <li>
-                    <a href="#">Misc</a>
-                </li>
-                <li>
-                    <a href="#">Rocket</a>
-                </li>
-                <li>
-                    <a href="#">Trap</a>
-                </li>
-            </ul>
-        </nav>
-        <main>
+<main id="main">
             <h1>Welcome To Acme!</h1>
             <section class="showcase" alt="Coyote with a Rocket">
                 <article>
@@ -96,32 +50,3 @@
                 </article>
             </section>
         </main>
-
-        <footer>
-            <hr>
-            &copy; ACME, All rights reserved.<br>
-            All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be
-            removed.<br>
-            Last updated: September 24, 2019
-        </footer>
-    </div>
-
-    <script>
-    /* Actual text
-    =====================
-    Hero description text
-  <ul>
-    <li><h2>Acme Rocket</h2></li>
-    <li>Quick lighting fuse</li>
-    <li>NHTSA approved seat belts</li>
-    <li>Mobile launch stand included</li>
-    <li><a href="/acme/cart/"><img id="actionbtn" alt="Add to cart button" src="/acme/images/iwantit.gif"></a></li>
-  </ul>
-
-Hero Product Review text
-  
-*/
-    </script>
-</body>
-
-</html>
