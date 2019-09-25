@@ -30,19 +30,19 @@ p{
     font-size:20px;
     color:var(--first);
 }
-header{
+#header{
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding: 6px;
+    padding:6px;
 }
-.logo{
-    width: 150px;
+#header .logo{
+    width:9em;
+    height: 3em;
     margin:0.7em;
 }
 .myAccount{
-    margin-top: 28px;
-    margin-left: 1rem;
+    margin-top: 15px;
 }
 .myAccount img{
     width: 35px;
@@ -52,14 +52,14 @@ header{
 }
 #navigation{
     background: var(--fifth);
-    padding:0.7em;
+    padding:0.092em;
 }
 #navigation ul{
     display: flex;
 }
 #navigation ul li{
     list-style: none;
-    margin-right: 0.5em;
+    margin-right: 0.1em;
     display: block;
 }
 #navigation ul li a {
