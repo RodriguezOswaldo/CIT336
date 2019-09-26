@@ -1,5 +1,5 @@
             <h1>Welcome To Acme!</h1>
-            <section class="showcase">
+            <div class="showcase">
                 <article>
                     <ul>
                         <li>
@@ -11,9 +11,9 @@
                         <li><a href="#"><img id="iWantIt" src="/dashboard/acme/images/site/iwantit.jpg" alt="Add to cart button"></a></li>
                     </ul>
                 </article>
-            </section>
+        </div>
 
-            <section class="section1">
+            <div class="section1">
                 <article class="article1 article">
                     <h2>Feature Recipes</h2>
                     <div>
@@ -47,4 +47,4 @@
                         </ul>
                     </div>
                 </article>
-            </section>
+        </div>
