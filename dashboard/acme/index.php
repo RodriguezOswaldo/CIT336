@@ -12,7 +12,7 @@
 
 <body>
     <div class="content">
-        <header id="header">
+        <header>
             <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/header.php'; ?>
         </header>
 

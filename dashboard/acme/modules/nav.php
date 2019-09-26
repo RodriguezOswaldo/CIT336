@@ -1,4 +1,3 @@
-<nav id="navigation" class="">
             <ul>
                 <li>
                     <a href="#" class="active">Home</a>
@@ -19,4 +18,3 @@
                     <a href="#">Trap</a>
                 </li>
             </ul>
-        </nav>

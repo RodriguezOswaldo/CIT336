@@ -13,7 +13,7 @@ body{
     background-attachment: fixed;
     background-size: auto; 
     padding: 0;
-    margin:0;
+    margin:0 ;
     line-height: 1.5;
     font-family: 'Be Vietnam', cursive;
 }
@@ -21,6 +21,7 @@ body{
     display: grid;
     background: var(--sixth);
     width:90%;
+    height: auto;
     margin:0 auto;
     box-shadow: 5px 5px 5px var(--shadow);
     text-align: center;
@@ -31,50 +32,54 @@ p{
 }
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding:0px;
 }
-#header .logo{
-    width:10em;
-    height: 4em;
+header .logo{
+    width:3.5em;
+    height: 1.8em;
     margin:0.7em;
 }
-#header a:focus{
+header a:focus{
     background: #808080; 
     color: #000;
 }
-#header a:hover{
+header a:hover{
     background: #808080; 
     color: brown;
 }
-.myAccount{
-    margin-top: 15px;
-}
-.myAccount img{
-    width: 35px;
+header a{
+    text-decoration: none;
 }
 #myAccount{
-    font-size: 2.5em
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+#myAccount img{
+    width: 1.5em;
 }
 #navigation{
     background: var(--fifth);
 }
 #navigation ul{
     display: flex;
+    margin:5px;
+    padding: 0;
 }
 #navigation ul li{
     list-style: none;
-    display: block;
+    margin-right: 12px;
 }
 #navigation ul li a {
     text-decoration: none;
-    padding-top: 1.3em;
-    font-size: 1.1rem;
-    padding-bottom:  1.3em;
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+    font-size: 1em;;
+    padding-top:0.3em;
+    padding-bottom:  0.3em;
+    padding-right:0.1em;
     color: var(--sixth); 
 }
+
 #navigation ul li a:link{
 
 }
@@ -93,37 +98,56 @@ header{
     color: var(--fifth);
     background: var(--sixth);
 }
+#main h1{
+    font-size: 1.8em;
+    text-align: start;
+    margin:0;
+    padding:0;
+}
 .showcase{
-    min-height: 100px;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    max-width: auto;
     background:url("/dashboard/acme/images/site/rocketfeature.jpg");
     background-size:cover;
     background-position: center; 
-    padding:3rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 .showcase ul li{
     list-style: none;
-    display: block;
+    margin-top:0;
+    font-size: 0.7em;
 }
-.section1{
-    display: flex;
-}
-.article{
-    width:50%;
-    margin: 12px;
-    margin-top:2px;
-    text-align: initial;
-}
-.article1 div{
-    column-count: 2;
+#iWantIt{
+    cursor: pointer;
 }
 .article1{
     grid-area: article1;
 }
 .article2{
     grid-area: article2;
+    margin:0;
+}
+.article{
+    width:100%;
+    margin:0;
+    padding:0;
+    text-align: initial;
+    font-size: 0.7em;
+}
+.section1{
+    display: grid;
+    grid-template-areas: 
+    'article2'
+    'article1';
+}
+.article1 div{
+    column-count: 2;
+    column-gap: 0;
+    margin-left: 10px;
 }
 .article div div{
     column-count: 1;
@@ -132,12 +156,14 @@ header{
 }
 .article1 div div img{
     display: flex;
-    margin: 5px;
     box-shadow: 3px 4px 5px var(--shadow);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     background: #808080;
     width: 6em;
+}
+h2{
+    font-weight: bolder;
 }
 .article1 a:hover{
     color: brown;
@@ -148,22 +174,24 @@ hr{
 footer{
     font-size: smaller;
     text-align: center;
+    font-weight: bold;
 }
-
-@media(max-width:700px){
-    .article{
-        width:100%;
+@media(min-width: 700px){
+    header .logo{
+        width:6.5em;
+        height: 2.8em;
     }
     .section1{
-        display: grid;
-        grid-template-areas: 
-        'article2'
-        'article1';
+        display: flex;
     }
-    .article2{
-        margin:0;
+    #navigation ul li a {
+        font-size: 1.5em;
     }
-    .article2 div, .article1{
-        margin-left:10%;
+    .showcase ul li{
+        font-size: 1em;
     }
+    .article{
+        font-size: 1em;
+    }
+
 }
