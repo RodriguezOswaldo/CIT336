@@ -1,34 +1,27 @@
-:root {
-    --first: #000;
-    --second: #00e;
-    --third: #808080;
-    --fourth:#903;
-    --fifth: #de2226;
-    --sixth:#fff;
-    --shadow: rgba(104, 104, 104, 0.8);
+*{
+    margin:0;
+    padding:0;
 }
 body{
     background-image:url(/dashboard/acme/images/site/background.jpg);
     background-size: cover; 
     background-attachment: fixed;
     background-size: auto; 
-    padding: 0;
-    margin:0 ;
     line-height: 1.5;
     font-family: 'Be Vietnam', cursive;
 }
 .content{
     display: grid;
-    background: var(--sixth);
+    background:#fff;
     width:90%;
     height: auto;
     margin:0 auto;
-    box-shadow: 5px 5px 5px var(--shadow);
+    box-shadow: 5px 5px 5px rgba(104, 104, 104, 0.8);
     text-align: center;
 }
 p{
     font-size:20px;
-    color:var(--first);
+    color:#000;
 }
 header{
     display: flex;
@@ -41,7 +34,7 @@ header .logo{
     margin:0.7em;
 }
 header a:focus{
-    background: #808080; 
+    background: rgba(104, 104, 104, 0.8); 
     color: #000;
 }
 header a:hover{
@@ -60,7 +53,7 @@ header a{
     width: 1.5em;
 }
 #navigation{
-    background: var(--fifth);
+    background: #de2226;
 }
 #navigation ul{
     display: flex;
@@ -77,7 +70,7 @@ header a{
     padding-top:0.3em;
     padding-bottom:  0.3em;
     padding-right:0.1em;
-    color: var(--sixth); 
+    color:#fff; 
 }
 
 #navigation ul li a:link{
@@ -87,16 +80,16 @@ header a{
 
 }
 #navigation ul li a:focus{
-    background: #808080; 
+    background: rgba(104, 104, 104, 0.8); 
     color: #000;
 }
 #navigation ul li a:hover{
-    background: var(--sixth);
-    color: var(--fifth);
+    background: #fff;
+    color: #de2226;
 }
 #navigation ul li a.active{
-    color: var(--fifth);
-    background: var(--sixth);
+    color: #de2226;
+    background: #fff;
 }
 #main h1{
     font-size: 1.8em;
@@ -119,7 +112,7 @@ header a{
     list-style: none;
     margin-top:0;
     font-size: 0.7em;
-    color: var(--fourth);
+    color: #903;
 }
 #iWantIt{
     cursor: pointer;
@@ -129,7 +122,11 @@ header a{
 }
 .article2{
     grid-area: article2;
-    margin:0;
+    margin:0px;
+}
+.article2 div ul{
+    margin-left:20px;
+
 }
 .article{
     width:100%;
@@ -156,7 +153,7 @@ header a{
 }
 .article1 div div img{
     display: flex;
-    box-shadow: 3px 4px 5px var(--shadow);
+    box-shadow: 3px 4px 5px rgba(104, 104, 104, 0.8);
     padding-left: 40px;
     padding-right: 40px;
     background: #808080;
