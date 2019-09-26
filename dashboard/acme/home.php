@@ -27,7 +27,7 @@
 
         <footer id="footer">
             <?php include $_SERVER['DOCUMENT_ROOT']."/dashboard/acme//modules/footer.php"; ?>
-            <p>Last Updated: <?php echo date('j F, Y', getlastmod()) ?></p>
+            <p id="lastupdated">Last Updated: <?php echo date('j F, Y', getlastmod()) ?></p>
         </footer>
     </div>
 </body>
