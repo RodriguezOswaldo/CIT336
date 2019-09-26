@@ -28,23 +28,6 @@
             <?php include $_SERVER['DOCUMENT_ROOT']."/dashboard/acme//modules/footer.php"; ?>
         </footer>
     </div>
-
-    <script>
-    /* Actual text
-    =====================
-    Hero description text
-  <ul>
-    <li><h2>Acme Rocket</h2></li>
-    <li>Quick lighting fuse</li>
-    <li>NHTSA approved seat belts</li>
-    <li>Mobile launch stand included</li>
-    <li><a href="/acme/cart/"><img id="actionbtn" alt="Add to cart button" src="/acme/images/iwantit.gif"></a></li>
-  </ul>
-
-Hero Product Review text
-  
-*/
-    </script>
 </body>
 
 </html>
