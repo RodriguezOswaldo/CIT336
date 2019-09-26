@@ -1,7 +1,6 @@
             <h1>Welcome To Acme!</h1>
-            <section class="showcase" alt="Coyote with a Rocket">
+            <section class="showcase">
                 <article>
-                    <!-- <img src="/dashboard/acme/images/site/rocketfeature.jpg" alt=""> -->
                     <ul>
                         <li>
                             <h2>Acme Rocket</h2>
@@ -9,7 +8,7 @@
                         <li>Quick lighting fuse</li>
                         <li>NHTSA approved seat belts</li>
                         <li>Mobile launch stand included</li>
-                        <li><a href="#"><img id="iWantIt"src="/dashboard/acme/images/site/iwantit.jpg" alt="Add to cart button"></a></li>
+                        <li><a href="#"><img id="iWantIt" src="/dashboard/acme/images/site/iwantit.jpg" alt="Add to cart button"></a></li>
                     </ul>
                 </article>
             </section>
@@ -49,4 +48,3 @@
                     </div>
                 </article>
             </section>
-        </main>

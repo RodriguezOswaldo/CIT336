@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam|Roboto&display=swap" rel="stylesheet">
-    <title> Home | Acme Inc.</title>
+    <title> Template | Acme Inc.</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         </nav>
 
         <main id="main">
-             <?php  ?>
+            <h1>Add Some content Here!</h1> 
         </main>
 
         <footer id="footer">

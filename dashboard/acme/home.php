@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam|Roboto&display=swap" rel="stylesheet">
+    <title>Home | Acme Inc.</title>
 </head>
 
 <body>
@@ -26,6 +27,7 @@
 
         <footer id="footer">
             <?php include $_SERVER['DOCUMENT_ROOT']."/dashboard/acme//modules/footer.php"; ?>
+            <p>Last Updated: <?php echo date('j F, Y', getlastmod()) ?></p>
         </footer>
     </div>
 </body>
