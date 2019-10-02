@@ -1,0 +1,41 @@
+1.
+INSERT INTO acme.clients
+(
+    clientFirstName,
+    clientLastname,
+    clientEmail,
+    clientPassword,
+    comments
+)
+VALUES
+(
+ 	"Tony", 
+    "Stark",
+    "tony@starkent.com",
+    "Iam1ronM@n",
+    "I am the real Ironman"   
+)
+;
+
+2.
+UPDATE acme.clients SET clientLevel = 3 WHERE clientLastname = "Stark";
+
+3. 
+UPDATE acme.inventory 
+SET invName = REPLACE(invName, 'Nylon Rope', 'Climbing Rope'),
+invDescription = REPLACE(invDescription, 'nylon', 'climbing'),
+invStyle = REPLACE(invStyle, 'Nylon', 'Climbing Rope');
+
+4.
+SELECT acme.inventory.invName, acme.categories.categoryName
+FROM acme.inventory 
+INNER JOIN acme.categories ON acme.inventory.categoryId = acme.categories.categoryId
+WHERE acme.categories.categoryName = 'Misc';
+
+5.
+DELETE 
+FROM 
+acme.inventory
+WHERE acme.inventory.invName = 'Koenigsegg CCX Car';
+
+6.
