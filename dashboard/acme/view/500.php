@@ -22,7 +22,7 @@
         </nav>
 
         <main id="main">
-            <h2>Server Error!</h2>
+            <h2 id="errorHeader">Server Error!</h2>
             <p>Sorry, the server experienced a problem</p> 
         </main>
 

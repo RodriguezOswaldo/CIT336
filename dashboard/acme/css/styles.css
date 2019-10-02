@@ -173,6 +173,33 @@ footer, #lastupdated{
     text-align: center;
     font-weight: bold;
 }
+#errorHeader{
+    animation-name: Changing;
+    animation: Changing 5s infinite;
+}
+@keyframes Changing{
+    0%{
+        color:gray;
+        transform: rotateX(20deg);
+    }
+    20%{
+        color: red;
+    }
+    50%{
+        color:green;
+        transform: rotateX(-20deg);
+
+    }
+    70%{
+        color:black;
+    }
+    100%{
+        color:blue;
+        transform: rotateX(20deg);
+
+    }
+}
+
 @media(min-width: 700px){
     header .logo{
         width:6.5em;
