@@ -18,7 +18,9 @@ VALUES
 ;
 
 2.
-UPDATE acme.clients SET clientLevel = 3 WHERE clientLastname = "Stark";
+UPDATE acme.clients 
+SET clientLevel = 3 
+WHERE clientLastname = "Stark";
 
 3. 
 UPDATE acme.inventory 
