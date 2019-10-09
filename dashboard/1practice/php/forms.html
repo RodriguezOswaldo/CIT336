@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+        padding-left: 15px;
+        }
+        input:required {
+        background-image: url('../images/required.png');
+        }
+        input:focus:invalid {
+        background-image: url('../images/invalid.png');
+        }
+        input:focus:valid {
+        background-image: url('../images/valid.png');
+        }
+    </style>
+</head>
+
+<body>
+    <form id="register" method="POST" action="">
+        <header>
+            <h1>Sign Me Up</h1>
+            <p>I would like to receive your fine publication.</p>
+        </header>
+
+        <ul>
+            <li>
+                <label for="register-name">My name is:</label>
+                <input type="text" id="register-name" name="name" required aria- ➥required="true">
+            </li>
+            <li>
+                <label for="address">My name is:</label>
+                <input type="text" id="addres" name="address" required aria- ➥required="true">
+            </li>
+            <li>
+                <label for="url">My website is located at:</label>
+                <input type="text" id="url" name="url">
+            </li>
+            <li>
+                <label for="password">I would like my password to be:</label>
+                <p>(at least 6 characters, no spaces)</p>
+                <input type="password" id="password" name="password" required aria- ➥required="true">
+            </li>
+            <li>
+                <label for="rating">On a scale of 1 to 10, my knowledge of
+                    ➥HTML5 is:</label>
+                <input type="text" name="rating" id="rating">
+            </li>
+            <li>
+                <label for="startdate">Please start my subscription on:
+                    ➥</label>
+                <input type="text" id="startdate" name="startdate">
+            </li>
+            <li>
+                <label for="quantity">I would like to receive <input ➥type="text" name="quantity" id="quantity"> copies
+                    of <cite>
+                        ➥The HTML5 Herald</cite>.</label>
+            </li>
+            <li>
+                <label for="upsell">Also sign me up for <cite>The CSS3
+                        ➥Chronicle</cite></label>
+                <input type="checkbox" id="upsell" name="upsell" value="CSS
+                    ➥Chronicle">
+            </li>
+            <li>
+                <label for="startdate">Please start my subscription on:
+                    ➥</label>
+                <input type="text" id="startdate" name="startdate" required aria ➥-required="true">
+            <li>
+                <input type="submit" id="register-submit" value="Send Post
+                    ➥Haste">
+            </li>
+        </ul>
+
+    </form>
+
+</body>
+
+</html>
