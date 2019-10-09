@@ -19,19 +19,19 @@
                     <div>
                         <div>
                             <img src="/dashboard/acme/images/recipes/bbqsand.jpg" alt="Roatrunner BBQ Sandwhich">
-                            <a href="#">Pulled Roadrunner BBQ</a>
+                            <a href="#" title="Pulled RoadRunner BBQ">Pulled Roadrunner BBQ</a>
                         </div>
                         <div>
                             <img src="/dashboard/acme/images/recipes/potpie.jpg" alt="Roadrunner Pot Pie">
-                            <a href="#" >Roadrunner Pot Pie</a>
+                            <a href="#" title="RoadRunner Pot Pie">Roadrunner Pot Pie</a>
                         </div>
                         <div>
                             <img src="/dashboard/acme/images/recipes/soup.jpg" alt="Roadrunner Soup">
-                            <a href="#" >Roadrunner Soup</a>
+                            <a href="#" title=" RoadRunner Soup">Roadrunner Soup</a>
                         </div>
                         <div>
                             <img src="/dashboard/acme/images/recipes/taco.jpg" alt="Roadrunner Taco">
-                            <a href="#" >Roadrunner Tacos</a>
+                            <a href="#" title=" RoadRunner Tacos">Roadrunner Tacos</a>
                         </div>
                     </div>
                 </article>

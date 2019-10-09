@@ -88,6 +88,10 @@ header a{
     color: #de2226;
 }
 #navigation ul li a.active{
+   
+}
+@@@get back here@@@@ 
+#navigation ul li:first-child{
     color: #de2226;
     background: #fff;
 }

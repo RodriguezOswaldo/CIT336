@@ -1,13 +1,17 @@
 <?php
-function getCagetories(){
-    //Create a connection from the acme Connection
-    $db = acmeConnect();
-     // The SQL statement to be used with the database 
-     $sql = 'SELECT categoryName FROM categories ORDER BY categoryName ASC'; 
-     // The next line creates the prepared statement using the acme connection      
-     $stmt = $db->prepare($sql);
-     // The next line runs the prepared statement 
-     $stmt->execute(); 
+/*
+Acme Model
+*/
+
+function getCategories(){
+    // Create a connection object from the acme connection function
+    $db = acmeConnect(); 
+    // The SQL statement to be used with the database 
+    $sql = 'SELECT categoryName FROM categories ORDER BY categoryName ASC'; 
+    // The next line creates the prepared statement using the acme connection      
+    $stmt = $db->prepare($sql);
+    // The next line runs the prepared statement 
+    $stmt->execute(); 
     // The next line gets the data from the database and 
     // stores it as an array in the $categories variable 
     $categories = $stmt->fetchAll(); 
@@ -16,6 +20,6 @@ function getCagetories(){
     // The next line sends the array of data back to where the function 
     // was called (this should be the controller) 
     return $categories;
-}
+   }
 
 ?>

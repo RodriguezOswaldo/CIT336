@@ -1,20 +1,21 @@
-            <ul>
+            <!-- <ul>
                 <li>
-                    <a href="#" class="active">Home</a>
+                    <a href="#" title="Acme Home Page"class="active">Home</a>
                 </li>
                 <li>
-                    <a href="#">Cannon</a>
+                    <a href="#" title="Cannons in our inventory">Cannon</a>
                 </li>
                 <li>
-                    <a href="#">Explosive</a>
+                    <a href="#" title="Explosives in our inventory">Explosive</a>
                 </li>
                 <li>
-                    <a href="#">Misc</a>
+                    <a href="#" title="miscellaneus items in our inventory">Misc</a>
                 </li>
                 <li>
-                    <a href="#">Rocket</a>
+                    <a href="#" title="Rockets in our inventory">Rocket</a>
                 </li>
                 <li>
-                    <a href="#">Trap</a>
+                    <a href="#" title="Traps in our inventory">Trap</a>
                 </li>
-            </ul>
+            </ul> -->
+            <?php echo $navList; ?>
