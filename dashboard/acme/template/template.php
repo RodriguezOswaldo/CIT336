@@ -18,7 +18,7 @@
         </header>
 
         <nav id="navigation" class="">
-            <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/nav.php'; ?>
+            <?php echo $navList; ?>
         </nav>
 
         <main id="main">

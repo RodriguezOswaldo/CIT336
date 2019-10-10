@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title> Template | Acme Inc.</title>
+    <title>Home | Acme Inc.</title>
 </head>
 
 <body>
@@ -22,8 +22,7 @@
         </nav>
 
         <main id="main">
-            <h2 id="errorHeader">Server Error!</h2>
-            <p>Sorry, the server experienced a problem</p> 
+             <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/main.php'; ?>
         </main>
 
         <footer id="footer">

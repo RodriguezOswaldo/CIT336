@@ -18,24 +18,6 @@ function acmeConnect(){
         exit;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 acmeConnect();
-
-
-
-
-
-
-
 
 ?>

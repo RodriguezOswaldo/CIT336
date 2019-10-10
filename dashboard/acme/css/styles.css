@@ -204,6 +204,24 @@ footer, #lastupdated{
     }
 }
 
+
+/* FORMS! */
+input {
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    }
+    input:required {
+    background-image: url('../images/required.png');
+    }
+    input:focus:invalid {
+    background-image: url('../images/invalid.png');
+    }
+    input:focus:valid {
+    background-image: url('../images/valid.png');
+    }
+
+/* Query */
 @media(min-width: 700px){
     header .logo{
         width:6.5em;
@@ -223,3 +241,5 @@ footer, #lastupdated{
     }
 
 }
+
+

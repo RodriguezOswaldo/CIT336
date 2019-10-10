@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title>Home | Acme Inc.</title>
+    <title> Template | Acme Inc.</title>
 </head>
 
 <body>
@@ -22,7 +22,12 @@
         </nav>
 
         <main id="main">
-             <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/main.php'; ?>
+            <h1>Acme Login </h1> 
+            <form action="">
+                <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress">
+                <label for="customerPassword">Password:</label><input required type="text" name="customerPassword" id="customerPassword">
+                <label for="notAMember">Not a member?</label><input type="button" name="notAMember" id="notAMember" value="Registered!">
+            </form>
         </main>
 
         <footer id="footer">
