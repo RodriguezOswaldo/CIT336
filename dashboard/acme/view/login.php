@@ -18,16 +18,18 @@
         </header>
 
         <nav id="navigation" class="">
-            <?php echo $navList; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/nav.php'; ?>
         </nav>
 
         <main id="main">
-            <h1>Acme Login </h1> 
-            <form action="">
+        <h1>Acme Login </h1> 
+            <form method="POST" action="">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress">
                 <label for="customerPassword">Password:</label><input required type="text" name="customerPassword" id="customerPassword">
-                <label for="notAMember">Not a member?</label><input type="button" name="notAMember" id="notAMember" value="Registered!">
+                <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In">
             </form>
+            <label for="notAMember">Not a member?</label><button onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Sign up</button>
+            
         </main>
 
         <footer id="footer">

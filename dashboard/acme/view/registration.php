@@ -1,18 +1,3 @@
-<?php
-require_once '../library/connections.php';
-// Get the acme model for use as needed
-require_once '../model/acme-model.php';
-// Get the array of categories
-$categories = getCategories();
-//Creating the dynamic navigation bar
-$navList = '<ul>';
-$navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
-foreach ($categories as $category) {
- $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-}
-$navList .= '</ul>';
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -33,11 +18,19 @@ $navList .= '</ul>';
         </header>
 
         <nav id="navigation" class="">
-            <?php echo $navList; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/nav.php'; ?>
         </nav>
 
         <main id="main">
-            <h1>Add Some content Here!</h1> 
+        <h1>Registration Form</h1>
+            <h3>Please complete all the fields</h3>
+            <form action="">
+                <label for="clientFirstName"><span>*</span>First Name:</label><input name="clientFirstname" id="clientFirstname" type="text"><br>
+                <label for="clientLastName"><span>*</span>Last Name:</label><input name="clientLastName" id="clientLastName" type="text"><br>
+                <label for="clientEmail"><span>*</span>Email:</label><input name="clientEmail" id="clientEmail" type="email"><br>
+                <label for="clientPassword"><span>*</span>Password:</label><input name="clientPassword" id="clientPassword" type="text"><br>
+                 <input type="submit"> 
+            </form> 
         </main>
 
         <footer id="footer">

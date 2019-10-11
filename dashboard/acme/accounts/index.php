@@ -2,9 +2,6 @@
 /*
 Accounts Controller 
 */
-
-
-
 // Get the database connection file
 require_once '../library/connections.php';
 // Get the acme model for use as needed
@@ -12,21 +9,17 @@ require_once '../model/acme-model.php';
 
 // Get the array of categories
 $categories = getCategories();
-
 /**************************
  ****Array of categories***
  **************************/
 // var_dump($categories);
 // 	exit;
-
-// Build a navigation bar using the $categories array
 $navList = '<ul>';
 $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
 foreach ($categories as $category) {
  $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
 }
 $navList .= '</ul>';
-
 /****************************************************************
  *Displaying the navigation list stored in the navList variable *
  ****************************************************************/
@@ -40,10 +33,10 @@ if($action == NULL){
 }
 switch($action){
     case 'login':
-            include 'view/login.php';
+            include '../view/login.php';
             break;
     case 'registration':
-        include 'view/registration.php';
+            include '../view/registration.php';
     break;
 
     default:
