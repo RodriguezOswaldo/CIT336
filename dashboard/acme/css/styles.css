@@ -73,12 +73,6 @@ header a{
     color:#fff; 
 }
 
-#navigation ul li a:link{
-
-}
-#navigation ul li a:visited{
-
-}
 #navigation ul li a:focus{
     background: rgba(104, 104, 104, 0.8); 
     color: #000;
@@ -86,14 +80,6 @@ header a{
 #navigation ul li a:hover{
     background: #fff;
     color: #de2226;
-}
-#navigation ul li a.active{
-   
-}
-@@@get back here@@@@ 
-#navigation ul li:first-child{
-    color: #de2226;
-    background: #fff;
 }
 #main h1{
     font-size: 1.8em;
@@ -181,6 +167,97 @@ footer, #lastupdated{
     animation-name: Changing;
     animation: Changing 5s infinite;
 }
+/* Login styles */
+.loginbox{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 320px;
+    height: 420px;
+    background:#fff;
+    color:#de2226;
+    box-sizing:border-box;
+    border: 1px solid #de2226;
+    transform:scale(0.7); 
+
+}
+
+.icon{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    background: #de2226;
+    top:-12%;
+    left: 35%;
+}
+form h1{
+    margin:0;
+    padding:0;
+    font-size:5m;
+    margin-bottom:20px;
+    text-align: center;
+}
+.loginbox label{
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.loginbox input[type="text"], input[type="email"]{
+    margin: 0 auto 20px auto; 
+    text-align: center;
+    width: 78%;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #de2226;
+    font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+.loginbox input[type="email"]:focus,
+ .loginbox input[type="text"]:focus {
+    width: 95%;
+    border-color: #2ecc71;
+    transition: 1.5s;
+}
+.loginbox input[type="submit"]{
+    margin: 0 auto 20px auto; 
+    text-align: center;
+    width: 55%;
+    border-radius: 10px;
+    background: #de2226;
+    border:none;
+    font-size:1.3em;
+    padding:5px 0 5px 0;
+    color:#fff;
+}
+.loginbox input[type="submit"]:active{
+    border: 1px solid #fff;
+    background:turquoise;
+    color:tomato;
+}
+.fas{
+    color:white;
+    font-size: 3em;
+    margin-top: 25%;
+}
+button{
+    margin: 0 auto 20px auto; 
+    text-align: center;
+    width: 55%;
+    border-radius: 10px;
+    background: #fff;
+    border:none;
+    font-size:1.3em;
+    color:#de2226;
+}
+button:focus{
+    border: 1px solid #fff;
+    background:turquoise;
+    color:tomato;
+}
 @keyframes Changing{
     0%{
         color:gray;
@@ -239,7 +316,11 @@ input {
     .article{
         font-size: 1em;
     }
-
+    .loginbox{
+        transform:scale(1); 
+        margin-top:60px;
+        margin-bottom: 60px;
+    }
 }
 
 

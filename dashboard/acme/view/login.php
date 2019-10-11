@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <title> Login Page | Acme Inc.</title>
 </head>
 
@@ -22,14 +23,17 @@
         </nav>
 
         <main id="main">
-        <h1>Acme Login </h1> 
-            <form method="POST" action="">
-                <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress">
-                <label for="customerPassword">Password:</label><input required type="text" name="customerPassword" id="customerPassword">
-                <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In">
+        <div class="loginbox">
+            <div class="icon"><i class='fas fa-fingerprint'></i></div>
+            <h1 id="loginTitle">Login</h1>
+            <form action="">
+                <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" ><br>
+                <label for="customerPassword">Password:</label><input required type="text" name="customerPassword" id="customerPassword" >
+                <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In"><br>
+                <label for="notAMember">Not a member?</label><br><button onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Sign up</button>
             </form>
-            <label for="notAMember">Not a member?</label><button onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Sign up</button>
-            
+
+    </div>
         </main>
 
         <footer id="footer">
