@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title> Template | Acme Inc.</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title> Registration | Acme Inc.</title>
 </head>
 
 <body>
@@ -22,15 +23,19 @@
         </nav>
 
         <main id="main">
-        <h1>Registration Form</h1>
-            <h3>Please complete all the fields</h3>
-            <form action="">
-                <label for="clientFirstName"><span>*</span>First Name:</label><input name="clientFirstname" id="clientFirstname" type="text"><br>
-                <label for="clientLastName"><span>*</span>Last Name:</label><input name="clientLastName" id="clientLastName" type="text"><br>
-                <label for="clientEmail"><span>*</span>Email:</label><input name="clientEmail" id="clientEmail" type="email"><br>
-                <label for="clientPassword"><span>*</span>Password:</label><input name="clientPassword" id="clientPassword" type="text"><br>
-                 <input type="submit"> 
-            </form> 
+        <div class="wrap">
+        <div class="icon"><i class='far fa-edit'></i></div>
+        <h1 class="loginTitle">Register</h1>
+        <form method="POST" action="/dashboard/acme/accounts/index.php?action=error">
+            <label>Please complete all the fields</label><br>
+            <label for="clientFirstName"><span>*</span> First Name:</label><br><input  name="clientFirstname" id="clientFirstName" type="text"><br>
+            <label for="clientLastName"><span>*</span> Last Name:</label><br><input  name="clientLastName" id="clientLastName" type="text"><br>
+            <label for="clientEmail"><span>*</span> Email:</label><br><input name="clientEmail" id="clientEmail" type="email"><br>
+            <label for="clientPassword"><span>*</span> Password:</label><br><input name="clientPassword" id="clientPassword" type="text"><br>
+            <input type="submit" value="Sign Up"> 
+        </form>
+
+    </div>
         </main>
 
         <footer id="footer">

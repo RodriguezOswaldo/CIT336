@@ -168,44 +168,45 @@ footer, #lastupdated{
     animation: Changing 5s infinite;
 }
 /* Login styles */
-.loginbox{
+.loginbox, .wrap{
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+    height: 460px;
     width: 320px;
-    height: 420px;
     background:#fff;
     color:#de2226;
     box-sizing:border-box;
     border: 1px solid #de2226;
     transform:scale(0.7); 
-
 }
-
+.wrap{
+    height: 540px;
+}
 .icon{
     width:100px;
     height: 100px;
     border-radius: 50%;
     position: relative;
     background: #de2226;
-    top:-12%;
+    top:-10%;
     left: 35%;
 }
 form h1{
     margin:0;
     padding:0;
-    font-size:5m;
     margin-bottom:20px;
     text-align: center;
 }
-.loginbox label{
+.loginbox label, .wrap label{
     margin:0;
     padding:0;
     font-weight:bold;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.loginbox input[type="text"], input[type="email"]{
+.loginbox input[type="text"], input[type="email"],
+.wrap input[type="text"], .wrap input[type="email"]{
     margin: 0 auto 20px auto; 
     text-align: center;
     width: 78%;
@@ -217,12 +218,15 @@ form h1{
     font-family: 'Courier New', Courier, monospace;
 }
 .loginbox input[type="email"]:focus,
- .loginbox input[type="text"]:focus {
+ .loginbox input[type="text"]:focus,
+ .wrap input[type="email"]:focus,
+ .wrap input[type="text"]:focus  {
     width: 95%;
     border-color: #2ecc71;
     transition: 1.5s;
 }
-.loginbox input[type="submit"]{
+.loginbox input[type="submit"],
+.wrap input[type="submit"]{
     margin: 0 auto 20px auto; 
     text-align: center;
     width: 55%;
@@ -233,7 +237,8 @@ form h1{
     padding:5px 0 5px 0;
     color:#fff;
 }
-.loginbox input[type="submit"]:active{
+.loginbox input[type="submit"]:active,
+.wrap input[type="submit"]:active{
     border: 1px solid #fff;
     background:turquoise;
     color:tomato;
@@ -243,20 +248,31 @@ form h1{
     font-size: 3em;
     margin-top: 25%;
 }
+.far{
+    color:white;
+    font-size: 3em;
+    margin-top: 25%;
+    margin-left: 10%;
+}
 button{
-    margin: 0 auto 20px auto; 
+    margin: 0px auto 20px auto; 
     text-align: center;
     width: 55%;
     border-radius: 10px;
     background: #fff;
-    border:none;
     font-size:1.3em;
     color:#de2226;
+    border: 1px solid #de2226;
+    padding:5px 0 5px 0;
 }
 button:focus{
     border: 1px solid #fff;
     background:turquoise;
     color:tomato;
+}
+.loginTitle{
+    text-align: inherit;
+    
 }
 @keyframes Changing{
     0%{
@@ -317,9 +333,13 @@ input {
         font-size: 1em;
     }
     .loginbox{
-        transform:scale(1); 
-        margin-top:60px;
         margin-bottom: 60px;
+        transform:scale(.9); 
+        margin-top:80px;
+    }
+    .wrap{
+        transform:scale(.9); 
+        margin-top:80px;
     }
 }
 

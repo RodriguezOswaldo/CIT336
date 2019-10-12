@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title>Home | Acme Inc.</title>
+    <title>Error Page | Acme Inc.</title>
 </head>
 
 <body>

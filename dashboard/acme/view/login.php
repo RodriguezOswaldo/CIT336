@@ -25,14 +25,13 @@
         <main id="main">
         <div class="loginbox">
             <div class="icon"><i class='fas fa-fingerprint'></i></div>
-            <h1 id="loginTitle">Login</h1>
-            <form action="">
+            <h1 class="loginTitle">Login</h1>
+            <form action="register">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" ><br>
-                <label for="customerPassword">Password:</label><input required type="text" name="customerPassword" id="customerPassword" >
+                <label for="customerPassword">Password:</label><input  required type="text" name="customerPassword" id="customerPassword" >
                 <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In"><br>
-                <label for="notAMember">Not a member?</label><br><button onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Sign up</button>
+                <label for="notAMember">Not a member?</label><br><button id="notAMember" onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Create New Account</button>
             </form>
-
     </div>
         </main>
 

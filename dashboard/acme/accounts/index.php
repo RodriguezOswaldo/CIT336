@@ -37,9 +37,13 @@ switch($action){
             break;
     case 'registration':
             include '../view/registration.php';
-    break;
+            break;
+    case 'error':
+            include '../view/500.php';
+            break;
 
     default:
+    
 
 }
 ?>
