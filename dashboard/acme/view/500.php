@@ -22,7 +22,8 @@
         </nav>
 
         <main id="main">
-             <?php include $_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/modules/main.php'; ?>
+            <h2 id="errorHeader">Server Error!</h2>
+            <p>Oops, an error has ocurred</p> 
         </main>
 
         <footer id="footer">
