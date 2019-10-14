@@ -26,6 +26,11 @@
         <div class="wrap">
         <div class="icon"><i class='far fa-edit'></i></div>
         <h1 class="loginTitle">Register</h1>
+        <?php
+        if (isset($message)) {
+        echo $message;
+        }
+        ?>
         <form action="/dashboard/acme/accounts/index.php" method="POST">
             <label>Please complete all the fields</label><br>
             <label for="clientFirstname"><span>*</span> First Name:</label><br><input  name="clientFirstname" id="clientFirstname" type="text"><br>
