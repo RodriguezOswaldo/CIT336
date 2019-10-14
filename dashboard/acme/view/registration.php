@@ -28,8 +28,8 @@
         <h1 class="loginTitle">Register</h1>
         <form method="POST" action="/dashboard/acme/accounts/index.php?action=error">
             <label>Please complete all the fields</label><br>
-            <label for="clientFirstName"><span>*</span> First Name:</label><br><input  name="clientFirstname" id="clientFirstName" type="text"><br>
-            <label for="clientLastName"><span>*</span> Last Name:</label><br><input  name="clientLastName" id="clientLastName" type="text"><br>
+            <label for="clientFirstname"><span>*</span> First Name:</label><br><input  name="clientFirstname" id="clientFirstname" type="text"><br>
+            <label for="clientLastname"><span>*</span> Last Name:</label><br><input  name="clientLastname" id="clientLastname" type="text"><br>
             <label for="clientEmail"><span>*</span> Email:</label><br><input name="clientEmail" id="clientEmail" type="email"><br>
             <label for="clientPassword"><span>*</span> Password:</label><br><input name="clientPassword" id="clientPassword" type="text"><br>
             <input type="submit" value="Sign Up"> 
