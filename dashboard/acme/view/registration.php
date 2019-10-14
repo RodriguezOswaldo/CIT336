@@ -26,13 +26,16 @@
         <div class="wrap">
         <div class="icon"><i class='far fa-edit'></i></div>
         <h1 class="loginTitle">Register</h1>
-        <form method="POST" action="/dashboard/acme/accounts/index.php?action=error">
+        <form action="/dashboard/acme/accounts/index.php" method="POST">
             <label>Please complete all the fields</label><br>
             <label for="clientFirstname"><span>*</span> First Name:</label><br><input  name="clientFirstname" id="clientFirstname" type="text"><br>
             <label for="clientLastname"><span>*</span> Last Name:</label><br><input  name="clientLastname" id="clientLastname" type="text"><br>
             <label for="clientEmail"><span>*</span> Email:</label><br><input name="clientEmail" id="clientEmail" type="email"><br>
             <label for="clientPassword"><span>*</span> Password:</label><br><input name="clientPassword" id="clientPassword" type="text"><br>
-            <input type="submit" value="Sign Up"> 
+            <input type="submit" name="submit" value="Sign Up"> 
+            <!-- Add the action key - value pair -->
+            <input type="hidden" name="action" value="register">
+
         </form>
 
     </div>
