@@ -26,9 +26,14 @@
         <div class="loginbox">
             <div class="icon"><i class='fas fa-fingerprint'></i></div>
             <h1 class="loginTitle">Login</h1>
-            <form action="register">
+            <?php
+            if (isset($message)) {
+            echo $message;
+            }
+            ?>
+            <form action="/dashboard/acme/accounts/index.php" method="POST">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" ><br>
-                <label for="customerPassword">Password:</label><input  required type="text" name="customerPassword" id="customerPassword" >
+                <label for="customerPassword">Password:</label><input  required type="password" name="customerPassword" id="customerPassword" >
                 <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In"><br>
                 <label for="notAMember">Not a member?</label><br><button id="notAMember" onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Create New Account</button>
             </form>

@@ -205,8 +205,9 @@ form h1{
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.loginbox input[type="text"], input[type="email"],
-.wrap input[type="text"], .wrap input[type="email"]{
+.loginbox input[type="text"], input[type="email"], input[type="password"],
+.wrap input[type="text"], .wrap input[type="email"],
+.wrap input[type="password"]{
     margin: 0 auto 20px auto; 
     text-align: center;
     width: 78%;
@@ -219,8 +220,10 @@ form h1{
 }
 .loginbox input[type="email"]:focus,
  .loginbox input[type="text"]:focus,
+ .loginbox input[type="password"]:focus,
  .wrap input[type="email"]:focus,
- .wrap input[type="text"]:focus  {
+ .wrap input[type="text"]:focus,
+ .wrap input[type="password"]:focus  {
     width: 95%;
     border-color: #2ecc71;
     transition: 1.5s;
