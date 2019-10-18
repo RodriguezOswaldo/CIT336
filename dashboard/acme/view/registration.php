@@ -41,7 +41,7 @@
             <input name="clientEmail" id="clientEmail" type="email"><br>
             <label for="clientPassword"><span>*</span> Password:</label><br>
             <input name="clientPassword" id="clientPassword" type="password"><br>
-            <input type="submit" name="submit" value="Sign Up"> 
+            <input type="submit" name="submit" value="Register"> 
             <!-- Add the action key - value pair -->
             <input type="hidden" name="action" value="register">
         </form>
