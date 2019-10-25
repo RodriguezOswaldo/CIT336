@@ -8,8 +8,6 @@
  
  require_once '../model/products-model.php';
 
-
-
  // Get the array of categories
 $categories = getCategories();
 // Get the array of categories ID
@@ -87,7 +85,7 @@ $catList = '<select name="categoryId" id="categoryId">';
     // Check for missing data
     if(empty($categoryName)){
         echo '<div class ="big"><p>Please provide information for all empty form fields</p></div>';
-        include '../view/new-cat.php';
+        include '../view/newCategory.php';
         exit;
     } 
    // Send the data to the model
@@ -101,7 +99,7 @@ $catList = '<select name="categoryId" id="categoryId">';
     } else 
     {
         
-        $message = '<p>Sorry, but the registration failed. Please try again. </p>';
+        $message = '<p>Registration failed. Please try again. </p>';
         include '../view/newCategory.php';
         exit;
     
@@ -134,7 +132,7 @@ $catList = '<select name="categoryId" id="categoryId">';
         
         
         echo '<div class ="big"><p>Please provide information for all empty form fields</p></div>';
-        include '../view/new-prod.php';
+        include '../view/newProduct.php';
         
         exit;
         } 

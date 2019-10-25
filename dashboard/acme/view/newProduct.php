@@ -41,7 +41,7 @@ $navList .= '</ul>';
 
         <main id="main">
             <h1>You are in the product page!</h1> 
-            <form method="POST" class="reg" action="../products/">
+            <form method="POST" class="products" action="../products/">
                 <fieldset>
                     <label for="catType"> Category </label><br/>
                     <?PHP     
@@ -70,7 +70,7 @@ $navList .= '</ul>';
                     <input name="invVendor" id="invVendor" title="Vendor Name"  type="text"  required> <br/>
                     <label for="invStyle">Primary Material</label> <br/>
                     <input name="invStyle" id="invStyle" type="text"  required> <br/>
-                    <input type="submit" name="submit" value="Send" class="log"/>       
+                    <input type="submit" name="submit" value="Submit" class="log"/>       
                     <input type="hidden" name="action" value="prod">
                 </fieldset>
             </form>    

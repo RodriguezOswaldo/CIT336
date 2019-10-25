@@ -168,7 +168,7 @@ footer, #lastupdated{
     animation: Changing 5s infinite;
 }
 /* Login styles */
-.loginbox, .wrap{
+.loginbox, .wrap, .products{
     margin-right: auto;
     margin-left: auto;
     text-align: center;
@@ -178,7 +178,13 @@ footer, #lastupdated{
     color:#de2226;
     box-sizing:border-box;
     border: 1px solid #de2226;
+    box-shadow: 2px 2px 3px #de2226;
+
     transform:scale(0.7); 
+}
+.products{
+    height: 863px;
+    box-shadow: 2px 2px 3px #de2226;
 }
 .wrap{
     height: 540px;
@@ -198,7 +204,9 @@ form h1{
     margin-bottom:20px;
     text-align: center;
 }
-.loginbox label, .wrap label{
+.loginbox label, 
+.wrap label, 
+.products label{
     margin:0;
     padding:0;
     font-weight:bold;
@@ -207,7 +215,8 @@ form h1{
 }
 .loginbox input[type="text"], input[type="email"], input[type="password"],
 .wrap input[type="text"], .wrap input[type="email"],
-.wrap input[type="password"]{
+.wrap input[type="password"],
+.products input[type="text"]{
     margin: 0 auto 20px auto; 
     text-align: center;
     width: 78%;
@@ -223,13 +232,17 @@ form h1{
  .loginbox input[type="password"]:focus,
  .wrap input[type="email"]:focus,
  .wrap input[type="text"]:focus,
- .wrap input[type="password"]:focus  {
+ .wrap input[type="password"]:focus,
+ .products input[type="text"]:focus
+    {
     width: 95%;
     border-color: #2ecc71;
     transition: 1.5s;
 }
 .loginbox input[type="submit"],
-.wrap input[type="submit"]{
+.wrap input[type="submit"],
+.products input[type="submit"]
+{
     margin: 0 auto 20px auto; 
     text-align: center;
     width: 55%;
@@ -241,7 +254,8 @@ form h1{
     color:#fff;
 }
 .loginbox input[type="submit"]:active,
-.wrap input[type="submit"]:active{
+.wrap input[type="submit"]:active
+.products input[type="submit"]:active{
     border: 1px solid #fff;
     background:turquoise;
     color:tomato;
