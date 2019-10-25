@@ -91,18 +91,18 @@ $catList = '<select name="categoryId" id="categoryId">';
         exit;
     } 
    // Send the data to the model
-    $regOutcome = newCategory($categoryName);
+    $regOutcome = addNewCategory($categoryName);
     // Check and report the result 
      
     if($regOutcome === 1){
         echo '<div class="big"><p> Thanks for registering the new category.</p></div>';
-        include '../view/new-cat.php';
+        include '../view/newCategory.php';
         exit;
     } else 
     {
         
         $message = '<p>Sorry, but the registration failed. Please try again. </p>';
-        include '../view/new-cat.php';
+        include '../view/newCategory.php';
         exit;
     
     }
@@ -140,21 +140,18 @@ $catList = '<select name="categoryId" id="categoryId">';
         } 
    // Send the data to the model
    
-   $regOutcome1 = addProduct($invName, $invDescription, $invImage,$invThumbnail,$invPrice, $invStock, $invSize, $invWeight, $invLocation,$categoryId, $invVendor, $invStyle);
+   $regOutcome1 = addProd($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle);
     // Check and report the result 
    
     if($regOutcome1 === 1){
-        echo '<div class="big"><p> Information correct.</p></div>';
-        
-        
-        include '../view/new-prod.php';
-        
+        echo '<div class="big"><p> New Product has been added to your inventory</p></div>';
+        include '../view/newProduct.php';
         exit;
     } 
     else {
         
         $message = '<p>Sorry, but the information failed. Please try again. </p>';
-        include '../view/new-prod.php';
+        include '../view/newCategory.php';
         
         exit;
     

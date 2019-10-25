@@ -42,48 +42,38 @@ $navList .= '</ul>';
         <main id="main">
             <h1>You are in the product page!</h1> 
             <form method="POST" class="reg" action="../products/">
-      <fieldset>
-        <label for="catType"> Category </label><br/>
-        
-        <?PHP 
-        
-             echo $catList;    
-           
-             
-             
-        ?><br>
-              
+                <fieldset>
+                    <label for="catType"> Category </label><br/>
+                    <?PHP     
+                        echo $catList;               
+                    ?><br>
             
-           
-            
- 
-        <label>Product Name</label> <br/>
-        <input type="text" name="invName" id="invName" required> <br/>
-        <label>Product Description</label> <br/>
-        <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" required></textarea><br/>
-        <label>Product Image(path to image)</label> <br/>
-        <input type="text" name="invImage" id="invImage" title="Image" required> <br/>
-        <label>Product Thumbnail(path to thumbnail</label> <br/>
-        <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" required><br/>
-        <label>Product Price</label> <br/>
-        <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01"  required><br/>
-        <label># In Stock</label> <br/>
-        <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" required><br/>
-        <label>Shipping Size(W x H x L in inches</label> <br/>
-        <input name="invSize" id="invSize" title="Shipping Size" placeholder="Inches" type="number" min="0"  step="0.01"  required> <br/>
-        <label>Weight(lbs)</label> <br/>
-        <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01"  required><br/>
-        <label>Location(city name)</label> <br/>
-        <input name="invLocation" id="invLocation" type="text" required> <br/>
-        
-        <label>Vendor Name</label> <br/>
-        <input name="invVendor" id="invVendor" title="Vendor Name"  type="text"  required> <br/>
-        <label>Primary Material</label> <br/>
-        <input name="invStyle" id="invStyle" type="text"  required> <br/>
-        <input type="submit" name="submit" value="Send" class="log"/>       
-        <input type="hidden" name="action" value="prod">
-    </fieldset>
-  </form>    
+                    <label for="invName">Product Name</label> <br/>
+                    <input type="text" name="invName" id="invName" required> <br/>
+                    <label for="invDescription">Product Description</label> <br/>
+                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" required></textarea><br/>
+                    <label for="invImage">Product Image(path to image)</label> <br/>
+                    <input type="text" name="invImage" id="invImage" title="Image" required> <br/>
+                    <label for="invThumbnail">Product Thumbnail(path to thumbnail</label> <br/>
+                    <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" required><br/>
+                    <label for="invPrice">Product Price</label> <br/>
+                    <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01" required><br/>
+                    <label for="invStock"># In Stock</label> <br/>
+                    <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" required><br/>
+                    <label for="invSize">Shipping Size(W x H x L in inches</label> <br/>
+                    <input name="invSize" id="invSize" title="Shipping Size"  type="number" min="0"  required> <br/>
+                    <label for="invWeight">Weight(lbs)</label> <br/>
+                    <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01"  required><br/>
+                    <label for="invLocation">Location(city name)</label> <br/>
+                    <input name="invLocation" id="invLocation" type="text" required> <br/>
+                    <label for="invVendor">Vendor Name</label> <br/>
+                    <input name="invVendor" id="invVendor" title="Vendor Name"  type="text"  required> <br/>
+                    <label for="invStyle">Primary Material</label> <br/>
+                    <input name="invStyle" id="invStyle" type="text"  required> <br/>
+                    <input type="submit" name="submit" value="Send" class="log"/>       
+                    <input type="hidden" name="action" value="prod">
+                </fieldset>
+            </form>    
         </main>
 
         <footer id="footer">
