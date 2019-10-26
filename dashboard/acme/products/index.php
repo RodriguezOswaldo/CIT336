@@ -42,11 +42,6 @@ $catList = '<select name="categoryId" id="categoryId">';
 //echo $catList;
 //exit;
 
-
-
-
-
- 
  $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
   $action = filter_input(INPUT_GET, 'action');
@@ -55,12 +50,12 @@ $catList = '<select name="categoryId" id="categoryId">';
       $action = 'products';
    
   }
-  if($action == 'new-cat.php'){
-          $action = 'new-cat';
+  if($action == 'newCategory.php'){
+          $action = 'newCategory';
     }
    
-  if($action == 'new-prod.php'){
-          $action = 'new-prod';
+  if($action == 'newProduct.php'){
+          $action = 'newProduct';
     }
   
   

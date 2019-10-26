@@ -358,6 +358,11 @@ input {
         transform:scale(.9); 
         margin-top:80px;
     }
+    .products{
+        transform:scale(1); 
+        margin-top:30px;
+        margin-bottom:10px;
+    }
 }
 
 

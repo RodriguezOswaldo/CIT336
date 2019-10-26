@@ -43,7 +43,7 @@ $navList .= '</ul>';
             <h1>You are in the product page!</h1> 
             <form method="POST" class="products" action="../products/">
                 <fieldset>
-                    <label for="catType"> Category </label><br/>
+                    <label> Category </label><br/>
                     <?PHP     
                         echo $catList;               
                     ?><br>
