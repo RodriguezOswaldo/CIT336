@@ -49,27 +49,27 @@ $navList .= '</ul>';
                     ?><br>
             
                     <label for="invName">Product Name</label> <br/>
-                    <input type="text" name="invName" id="invName" required> <br/>
+                    <input type="text" name="invName" id="invName" > <br/>
                     <label for="invDescription">Product Description</label> <br/>
-                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" required></textarea><br/>
+                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" ></textarea><br/>
                     <label for="invImage">Product Image(path to image)</label> <br/>
-                    <input type="text" name="invImage" id="invImage" title="Image" required> <br/>
+                    <input type="text" name="invImage" id="invImage" title="Image" > <br/>
                     <label for="invThumbnail">Product Thumbnail(path to thumbnail</label> <br/>
-                    <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" required><br/>
+                    <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" ><br/>
                     <label for="invPrice">Product Price</label> <br/>
-                    <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01" required><br/>
+                    <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01" ><br/>
                     <label for="invStock"># In Stock</label> <br/>
-                    <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" required><br/>
+                    <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" ><br/>
                     <label for="invSize">Shipping Size(W x H x L in inches</label> <br/>
-                    <input name="invSize" id="invSize" title="Shipping Size"  type="number" min="0"  required> <br/>
+                    <input name="invSize" id="invSize" title="Shipping Size"  type="number" min="0"  > <br/>
                     <label for="invWeight">Weight(lbs)</label> <br/>
-                    <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01"  required><br/>
+                    <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01"  ><br/>
                     <label for="invLocation">Location(city name)</label> <br/>
-                    <input name="invLocation" id="invLocation" type="text" required> <br/>
+                    <input name="invLocation" id="invLocation" type="text" > <br/>
                     <label for="invVendor">Vendor Name</label> <br/>
-                    <input name="invVendor" id="invVendor" title="Vendor Name"  type="text"  required> <br/>
+                    <input name="invVendor" id="invVendor" title="Vendor Name"  type="text"  > <br/>
                     <label for="invStyle">Primary Material</label> <br/>
-                    <input name="invStyle" id="invStyle" type="text"  required> <br/>
+                    <input name="invStyle" id="invStyle" type="text"  > <br/>
                     <input type="submit" name="submit" value="Submit" class="log"/>       
                     <input type="hidden" name="action" value="prod">
                 </fieldset>
