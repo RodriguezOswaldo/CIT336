@@ -44,7 +44,7 @@ $navList .= '</ul>';
             
             <form method="POST" class="reg" action="../products/index.php">
                 <label>New Category Name</label> <br/>
-                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text" required>
+                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text">
                 <br/><br/>
                 <input type="submit" name="submit" value="Add Category" class="log"/>       
                 <input type="hidden" name="action" value="cat">
