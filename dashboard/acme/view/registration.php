@@ -41,7 +41,7 @@
                     <input name="clientEmail" id="clientEmail" type="email" placeholder="sonata@artica.com" required><br>
                     <label for="clientPassword"><span>*</span> Password:</label><br>
                     <input name="clientPassword" id="clientPassword" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
-                    <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br>
+                    <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br><br>
                     <input type="submit" name="submit" value="Register">
                     <!-- Add the action key - value pair -->
                     <input type="hidden" name="action" value="register">
