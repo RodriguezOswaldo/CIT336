@@ -33,9 +33,9 @@ if($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
 }
 switch($action){
-        // case 'login':
-        //     include '../view/login.php';
-        //     break;
+        case 'login':
+            include '../view/login.php';
+            break;
         // case 'registration':
         //     include '../view/registration.php';
         //     break;

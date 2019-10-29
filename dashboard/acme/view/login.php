@@ -35,7 +35,7 @@
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" ><br>
                 <label for="customerPassword">Password:</label><input  required type="password" name="customerPassword" id="customerPassword" >
                 <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In"><br>
-                <label for="notAMember">Not a member?</label><br><button id="notAMember" onclick="window.location='/dashboard/acme/accounts/index.php?action=registration'">Create New Account</button>
+                <label for="notAMember">Not a member?</label><br><button id="notAMember" onclick="window.location='/dashboard/acme/accounts/index.php?action=register'">Create New Account</button>
             </form>
     </div>
         </main>
