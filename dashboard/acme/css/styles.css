@@ -187,7 +187,7 @@ footer, #lastupdated{
     box-shadow: 2px 2px 3px #de2226;
 }
 .wrap{
-    height: 540px;
+    height: 630px;
 }
 .icon{
     width:100px;
@@ -289,6 +289,10 @@ button:focus{
 }
 .loginTitle{
     text-align: inherit;
+}
+.notePass{
+    font-size: smaller;
+    line-height: 0.2;
 }
 @keyframes Changing{
     0%{

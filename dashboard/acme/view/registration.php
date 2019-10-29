@@ -23,31 +23,30 @@
         </nav>
 
         <main id="main">
-        <div class="wrap">
-        <div class="icon"><i class='far fa-edit'></i></div>
-        <h1 class="loginTitle">Register</h1>
-        <?php
-        if (isset($message)) {
-        echo $message;
-        }
-        ?>
-        <form action="/dashboard/acme/accounts/index.php" method="POST">
-            <label>Please complete all the fields</label><br>
-            <label for="clientFirstname"><span>*</span> First Name:</label><br>
-            <input name="clientFirstname" id="clientFirstname" type="text" required><br>
-            <label for="clientLastname"><span>*</span> Last Name:</label><br>
-            <input name="clientLastname" id="clientLastname" type="text" required><br>
-            <label for="clientEmail"><span>*</span> Email:</label><br>
-            <input name="clientEmail" id="clientEmail" type="email" required><br>
-            <label for="clientPassword"><span>*</span> Password:</label><br>
-            <input name="clientPassword" id="clientPassword" type="password" required><br>
-            <label class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</label>
-            <input type="submit" name="submit" value="Register"> 
-            <!-- Add the action key - value pair -->
-            <input type="hidden" name="action" value="register">
-        </form>
-
-    </div>
+            <div class="wrap">
+                <div class="icon"><i class='far fa-edit'></i></div>
+                <h1 class="loginTitle">Register</h1>
+                <?php
+                if (isset($message)) {
+                echo $message;
+                }
+                ?>
+                <form action="/dashboard/acme/accounts/index.php" method="POST">
+                    <label>Please complete all the fields</label><br>
+                    <label for="clientFirstname"><span>*</span> First Name:</label><br>
+                    <input name="clientFirstname" id="clientFirstname" type="text" required><br>
+                    <label for="clientLastname"><span>*</span> Last Name:</label><br>
+                    <input name="clientLastname" id="clientLastname" type="text" required><br>
+                    <label for="clientEmail"><span>*</span> Email:</label><br>
+                    <input name="clientEmail" id="clientEmail" type="email" required><br>
+                    <label for="clientPassword"><span>*</span> Password:</label><br>
+                    <input name="clientPassword" id="clientPassword" type="password" required><br>
+                    <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br>
+                    <input type="submit" name="submit" value="Register">
+                    <!-- Add the action key - value pair -->
+                    <input type="hidden" name="action" value="register">
+                </form>
+            </div>
         </main>
 
         <footer id="footer">
