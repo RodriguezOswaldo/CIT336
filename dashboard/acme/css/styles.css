@@ -172,7 +172,7 @@ footer, #lastupdated{
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    height: 460px;
+    height: 520px;
     width: 320px;
     background:#fff;
     color:#de2226;
@@ -293,6 +293,7 @@ button:focus{
 .notePass{
     font-size: smaller;
     line-height: 0.2;
+    color: gray;
 }
 @keyframes Changing{
     0%{

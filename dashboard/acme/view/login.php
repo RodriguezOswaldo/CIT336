@@ -33,7 +33,8 @@
             ?>
             <form action="/dashboard/acme/accounts/index.php" method="POST">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" ><br>
-                <label for="customerPassword">Password:</label><input  required type="password" name="customerPassword" id="customerPassword" >
+                <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br>
+                <label for="customerPassword">Password:</label><input  required type="password" name="customerPassword" id="customerPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 <label for="signIn"></label><input type="submit" name="sign in" id="signIn" value="Sign In"><br>
                 <label for="notAMember">Not a member?</label><br><button id="notAMember" onclick="window.location='/dashboard/acme/accounts/index.php?action=register'">Create New Account</button>
             </form>
