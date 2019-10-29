@@ -292,7 +292,7 @@ button:focus{
 }
 .notePass{
     font-size: smaller;
-    line-height: 0.2;
+    line-height: 0.9;
     color: gray;
 }
 @keyframes Changing{
