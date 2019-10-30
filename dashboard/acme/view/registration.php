@@ -34,23 +34,23 @@
                 <form action="/dashboard/acme/accounts/index.php" method="POST">
                     <label>Please complete all the fields</label><br>
                     <label for="clientFirstname"><span>*</span> First Name:</label><br>
-                    <input name="clientFirstname" id="clientFirstname" type="text" placeholder="User Given Name" required <?php 
+                    <input name="clientFirstname" id="clientFirstname" type="text" placeholder="User Given Name" <?php 
                     if(isset($clientFirstname)){
                         echo "value='$clientFirstname'";
                     }
-                    ?>><br>
+                    ?> required><br>
                     <label for="clientLastname"><span>*</span> Last Name:</label><br>
-                    <input name="clientLastname" id="clientLastname" type="text" placeholder="User Last Name" required<?php 
+                    <input name="clientLastname" id="clientLastname" type="text" placeholder="User Last Name" <?php 
                     if(isset($clientLastname)){
                         echo "value='$clientLastname'";
                     }
-                    ?>><br>
+                    ?> required><br>
                     <label for="clientEmail"><span>*</span> Email:</label><br>
-                    <input name="clientEmail" id="clientEmail" type="email" placeholder="sonata@artica.com" required<?php 
+                    <input name="clientEmail" id="clientEmail" type="email" placeholder="sonata@artica.com" <?php 
                     if(isset($clientEmail)){
                         echo "value='$clientEmail'";
                     }
-                    ?>><br>
+                    ?> required><br>
                     <label for="clientPassword"><span>*</span> Password:</label><br>
                     <input name="clientPassword" id="clientPassword" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                     <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br><br>
