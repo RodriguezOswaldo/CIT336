@@ -12,9 +12,9 @@
     // Check the Password for a minimum of 8 character,
     // at least one 1 capital letter, at least 1 number
     // at least 1 special character
+    
      function checkPassword($clientPassword){
-        $pattern = '(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'; 
+        $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
         return preg_match($pattern, $clientPassword);
-     }
-
+       }
 ?>

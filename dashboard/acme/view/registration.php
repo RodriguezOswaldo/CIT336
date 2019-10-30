@@ -32,7 +32,7 @@
                 }
                 ?>
                 <form action="/dashboard/acme/accounts/index.php" method="POST">
-                    <label>Please complete all the fields</label><br>
+                   <!-- <label>Please complete all the fields</label><br>-->
                     <label for="clientFirstname"><span>*</span> First Name:</label><br>
                     <input name="clientFirstname" id="clientFirstname" type="text" placeholder="User Given Name" <?php 
                     if(isset($clientFirstname)){
