@@ -32,7 +32,7 @@ $navList = '<ul>';
  //exit;
 // reset the index
 $indexCatIDtryarray = 0;
-$catList = '<select name="categoryId" id="categoryId">';
+$catList = '<select name="categoryId" id="categoryId" required>';
  $catList .= '<option value="empty">Choose a Category</option>';
  foreach ($categoriesID as $categoryID) {
      $catList .= '<option value="'.urlencode($categoryID['categoryId']).'">'.$catNames[$indexCatIDtryarray].'</option>';
@@ -123,14 +123,22 @@ $catList = '<select name="categoryId" id="categoryId">';
 // Check for missing data
     //$categoryId = NULL;
     
-    if(empty($invName)|| empty($invDescription)|| empty($invImage) || empty($invThumbnail)|| empty($invPrice)|| empty($invStock)|| empty($invSize)|| empty($invWeight)|| empty($invLocation)||empty($categoryId)|| empty($invVendor)||empty($invStyle)){
-        
-        
-        
-        echo '<div class ="big"><p>Please provide information for all empty form fields</p></div>';
-        include '../view/newProduct.php';
-        
-        exit;
+    if( empty($invName)|| 
+        empty($invDescription)|| 
+        empty($invImage) || 
+        empty($invThumbnail)|| 
+        empty($invPrice)|| 
+        empty($invStock)|| 
+        empty($invSize)|| 
+        empty($invWeight)|| 
+        empty($invLocation)||
+        empty($categoryId)|| 
+        empty($invVendor)||
+        empty($invStyle)){
+            echo '<div><p>Please provide information for all empty form fields</p></div>';
+            include '../view/newProduct.php';
+            
+            exit;
         } 
    // Send the data to the model
    
