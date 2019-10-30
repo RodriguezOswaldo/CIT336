@@ -53,8 +53,8 @@ switch($action){
         $checkPassword = checkPassword($clientPassword);
         // Check for missing data
         if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
-        $message = '<p style="color:red">Please provide information for all empty form fields.</p>';
-        include '../view/registration.php';
+            $message = '<p style="color:yellow; background:black;">Please provide information for all empty form fields.</p>';
+            include '../view/registration.php';
         exit; 
     }
     //Protecting the password using a password_hash method 
