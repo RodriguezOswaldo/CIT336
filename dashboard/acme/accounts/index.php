@@ -48,10 +48,11 @@ switch($action){
         $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
         $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
         $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+
         $clientEmail = checkEmail($clientEmail);
-        $clientPassword = checkPassword($clientPassword);
+        $checkPassword = checkPassword($clientPassword);
         // Check for missing data
-        if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)){
+        if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
         $message = '<p>Please provide information for all empty form fields.</p>';
         include '../view/registration.php';
         exit; 
