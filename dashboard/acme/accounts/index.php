@@ -73,6 +73,19 @@ switch($action){
     exit;
         }
     break;
+    
+    case 'Login':
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+        $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+        //Double checking the email and password before storing it to the database
+        $clientEmail = checkEmail($clientEmail);
+        $checkPassword = checkPassword($clientPassword);
+
+        if(empty($clientEmail) || empty($checkPassword)){
+            $message = '<p style="color:red">Please provide information for all empty form fields.</p>';
+            include '../view/login.php';
+        }
+    break;
 
 }
 ?>

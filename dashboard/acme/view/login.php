@@ -33,8 +33,8 @@
             ?>
             <form action="/dashboard/acme/accounts/index.php" method="POST">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" <?php 
-                    if(isset($clientEmail)){
-                        echo $clientEmail;
+                    if(isset($clientFirstname)){
+                        echo "value='$clientFirstname'";
                     }
                     ?> ><br>
                 <span class="notePass">The password must be at least 8 characters and contain at least 1 number, 1 captital letter and 1 special character</span><br>
