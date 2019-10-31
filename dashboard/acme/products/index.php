@@ -15,8 +15,6 @@ Products Controller
 $categories = getCategories();
 // Get the array of categories ID
 $categoriesID = getCategoriesID();
-
-
 // Create an array to save the names for indexes in order to create the select option
 $indexCatIDtryarray = 0;
 $catNames = array();
