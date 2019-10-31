@@ -1,10 +1,24 @@
 <?php
-require_once '../library/connections.php';
-// Get the acme model for use as needed
-require_once '../model/acme-model.php';
+// $catNames = getarrayscat();
+  
+// // Create an array to save the names for indexes in order to create the select option
+// $indexCatIDtryarray = 0;
 
-require_once '../model/products-model.php';
-
+// $catList = '<select name="categoryId" id="categoryId">';
+//  $catList .= '<option value="empty">Choose a Category</option>';
+//  foreach ($categoriesID as $categoryID) {
+     
+//      $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
+//      if (isset($categoryId)) {
+//          if(urlencode($categoryID['categoryId']) === $categoryId) {
+//              $catList .= ' selected ';
+//          }
+//      }
+//      $catList.= '>'.$catNames[$indexCatIDtryarray].'</option>';
+//      //use the array to write the name according the index, in the sql they use the same class of organization
+//      $indexCatIDtryarray = $indexCatIDtryarray + 1;
+//  }
+//  $catList .= '</select>';
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +30,7 @@ require_once '../model/products-model.php';
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title> New Product | Acme Inc.</title>
+    <title> New Products | Acme Inc.</title>
 </head>
 
 <body>

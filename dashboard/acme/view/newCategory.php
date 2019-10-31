@@ -1,8 +1,4 @@
 <?php
-require_once '../library/connections.php';
-// Get the acme model for use as needed
-require_once '../model/acme-model.php';
-// Get the array of categories
 
 ?>
 <!doctype html>
@@ -36,11 +32,7 @@ require_once '../model/acme-model.php';
             
             <form method="POST" class="reg" action="../products/index.php">
                 <label>New Category Name</label> <br/>
-                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text"  <?php 
-                    if(isset($categoryName)){
-                        echo "value='$categoryName'";
-                    }
-                    ?> required>
+                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text" required>
                 <br/><br/>
                 <input type="submit" name="submit" value="Add Category" class="log"/>       
                 <input type="hidden" name="action" value="cat">
