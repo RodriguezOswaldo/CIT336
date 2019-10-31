@@ -8,6 +8,8 @@ Products Controller
  require_once '../model/acme-model.php';
  
  require_once '../model/products-model.php';
+ //Get the custom functions 
+ require_once '../library/functions.php';
 
  // Get the array of categories
 $categories = getCategories();

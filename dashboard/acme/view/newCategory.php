@@ -3,14 +3,6 @@ require_once '../library/connections.php';
 // Get the acme model for use as needed
 require_once '../model/acme-model.php';
 // Get the array of categories
-$categories = getCategories();
-//Creating the dynamic navigation bar
-$navList = '<ul>';
-$navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
-foreach ($categories as $category) {
- $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-}
-$navList .= '</ul>';
 
 ?>
 <!doctype html>
@@ -23,7 +15,7 @@ $navList .= '</ul>';
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title> Template | Acme Inc.</title>
+    <title> New Categories | Acme Inc.</title>
 </head>
 
 <body>
@@ -44,7 +36,11 @@ $navList .= '</ul>';
             
             <form method="POST" class="reg" action="../products/index.php">
                 <label>New Category Name</label> <br/>
-                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text" required>
+                <input name="categoryName" id="categoryName" title="Category Name" placeholder="Name" type="text"  <?php 
+                    if(isset($categoryName)){
+                        echo "value='$categoryName'";
+                    }
+                    ?> required>
                 <br/><br/>
                 <input type="submit" name="submit" value="Add Category" class="log"/>       
                 <input type="hidden" name="action" value="cat">
