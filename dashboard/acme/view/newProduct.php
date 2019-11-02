@@ -1,24 +1,31 @@
 <?php
-// $catNames = getarrayscat();
+$indexCatIDtryarray = 0;
+$catNames = array();
+foreach ($categories as $category) {
+    //save the names in the array
+   $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
+    //increment the index
+    $indexCatIDtryarray = $indexCatIDtryarray + 1;
+}
+//$navList .= '</ul>';
+ // reset the index
+ $indexCatIDtryarray = 0;
+ $catList = '<select name="categoryId" id="categoryId" class="message3">';
+ $catList .= '<option value="Choose a category">Choose a category</option>';
+ 
+ foreach ($categoriesID as $categoryID) {
   
-// // Create an array to save the names for indexes in order to create the select option
-// $indexCatIDtryarray = 0;
-
-// $catList = '<select name="categoryId" id="categoryId">';
-//  $catList .= '<option value="empty">Choose a Category</option>';
-//  foreach ($categoriesID as $categoryID) {
-     
-//      $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
-//      if (isset($categoryId)) {
-//          if(urlencode($categoryID['categoryId']) === $categoryId) {
-//              $catList .= ' selected ';
-//          }
-//      }
-//      $catList.= '>'.$catNames[$indexCatIDtryarray].'</option>';
-//      //use the array to write the name according the index, in the sql they use the same class of organization
-//      $indexCatIDtryarray = $indexCatIDtryarray + 1;
-//  }
-//  $catList .= '</select>';
+   $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
+   if (isset($categoryId)) {
+       if(urlencode($categoryID['categoryId']) === $categoryId) {
+           $catList .= ' selected ';
+       }
+   }
+   $catList.= '>'.$catNames[$indexCatIDtryarray].'</option>';
+   //use the array to write the name according the index, in the sql they use the same class of organization
+   $indexCatIDtryarray = $indexCatIDtryarray + 1;
+}
+$catList .= '</select>';
 ?>
 <!doctype html>
 <html lang="en">

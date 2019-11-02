@@ -16,32 +16,9 @@ $categories = getCategories();
 // Get the array of categories ID
 $categoriesID = getCategoriesID();
 // Create an array to save the names for indexes in order to create the select option
-$indexCatIDtryarray = 0;
-$catNames = array();
-$navList = '<ul>';
- $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
- foreach ($categories as $category) {
-  $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-     //save the names in the array
-    $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
-     //increment the index
-     $indexCatIDtryarray = $indexCatIDtryarray + 1;
- }
- $navList .= '</ul>';
- //echo $navList;
- //exit;
-// reset the index
-$indexCatIDtryarray = 0;
-$catList = '<select name="categoryId" id="categoryId" required>';
- $catList .= '<option value="empty">Choose a Category</option>';
- foreach ($categoriesID as $categoryID) {
-     $catList .= '<option value="'.urlencode($categoryID['categoryId']).'">'.$catNames[$indexCatIDtryarray].'</option>';
-     //use the array to write the name according the index, in the sql they use the same class of organization
-     $indexCatIDtryarray = $indexCatIDtryarray + 1;
- }
- $catList .= '</select>';
-//echo $catList;
-//exit;
+$navList = commonNavigation($categories);
+//Build the CatList
+$catList = buildID($categoriesID, $navList, $categories);
 
  $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -110,7 +87,7 @@ $catList = '<select name="categoryId" id="categoryId" required>';
     $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
     $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     //$invPrice = checkPrice($invPrice);
-    $invStock =filter_input(INPUT_POST, 'invStock');
+    $invStock =filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_INT);
     $invSize = filter_input(INPUT_POST, 'invSize', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     //$invSize = checkFloat($invSize);
     $invWeight = filter_input(INPUT_POST, 'invWeight', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);

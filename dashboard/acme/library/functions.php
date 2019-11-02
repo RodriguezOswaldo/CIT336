@@ -36,4 +36,34 @@
         $navList .= '</ul>';
         return $navList;
     }
+
+    function buildID($categoriesID,$navList,$categories){
+        $indexCatIDtryarray = 0;
+        $catNames = array();
+        foreach ($categories as $category) {
+         $navList .= "<li><a href='../index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+            //save the names in the array
+           $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
+            //increment the index
+            $indexCatIDtryarray = $indexCatIDtryarray + 1;
+        }
+        $navList .= '</ul>';
+         //echo $navList;
+         //exit;
+         // reset the index
+         $indexCatIDtryarray = 0;
+         $catList = '<select name="categoryId" id="categoryId" class="message3">';
+         $catList .= '<option value="Choose a category">Choose a category</option>';
+         foreach ($categoriesID as $categoryID) {
+             $catList .= '<option value="'.urlencode($categoryID['categoryId']).'" class="big">'.$catNames[$indexCatIDtryarray].'</option>';
+             //use the array to write the name according the index, in the sql they use the same class of organization
+             $indexCatIDtryarray = $indexCatIDtryarray + 1;
+         }
+         $catList .= '</select>';
+         //echo $catList;
+         //exit;
+          return $catList;
+     }
+
+    
 ?>
