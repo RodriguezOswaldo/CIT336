@@ -66,11 +66,11 @@ $catList .= '</select>';
                     }
                     ?> required > <br/>
                     <label for="invDescription">Product Description</label> <br/>
-                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" <?php 
+                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" required><?php 
                     if(isset($invDescription)){
-                        echo "value='$invDescription'";
+                        echo $invDescription;
                     }
-                    ?> required></textarea><br/>
+                    ?> </textarea><br/>
                     <label for="invImage">Product Image(path to image)</label> <br/>
                     <input type="text" name="invImage" id="invImage" title="Image" <?php 
                     if(isset($invImage)){
