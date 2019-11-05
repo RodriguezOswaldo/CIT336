@@ -29,4 +29,24 @@ function regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassw
     return $rowsChanged;
     }
 
+
+// Check for an existing email address
+function checkExistingEmail($clientEmail) {
+    $db = acmeConnect();
+    $sql = 'SELECT clientEmail FROM clients WHERE clientEmail = :email';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
+    $stmt->execute();
+    $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
+    $stmt->closeCursor();
+    if(empty($matchEmail)){
+    // return 0;
+   echo 'Nothing Found';
+    exit;
+   }else{
+   // return 1;
+   echo 'Match Found';
+    exit;
+   }
+}
 ?>

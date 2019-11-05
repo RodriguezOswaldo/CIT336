@@ -42,12 +42,24 @@ switch($action){
         //Double checking the email and password before storing it to the database
         $clientEmail = checkEmail($clientEmail);
         $checkPassword = checkPassword($clientPassword);
+        ///Checking for an existing email address.
+        $existingEmail = checkExistingEmail($clientEmail);
+
+        // Check for existing email address in the table
+        if($existingEmail){
+         $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+         include '../view/login.php';
+         exit;
+        }
+
         // Check for missing data
         if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
             $message = '<p style="color:yellow; background:black;">Please provide information for all empty form fields.</p>';
             include '../view/registration.php';
         exit; 
     }
+
+    //Checking for 
     //Protecting the password using a password_hash method 
     $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
     // Send the data to the model
