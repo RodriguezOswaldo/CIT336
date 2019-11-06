@@ -1,4 +1,7 @@
 <div>
+<?php if(isset($cookieFirstname)){
+ echo "<span>Welcome $cookieFirstname</span>";
+} ?>
         <a href="/dashboard/acme/index.php"><img class="logo" src="/dashboard/acme/images/site/logo.jpg" title="Acme Logo" alt="Acme Logo"></a>
     </div>
     <div id="myAccount">

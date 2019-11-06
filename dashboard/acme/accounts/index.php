@@ -2,6 +2,8 @@
 /*
 Accounts Controller 
 */
+ // Create or access a Session 
+ session_start();
 // Get the database connection file
 require_once '../library/connections.php';
 // Get the acme model for use as needed
@@ -26,6 +28,12 @@ $action = filter_input(INPUT_POST, 'action');
 if($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
 }
+
+// Check if the firstname cookie exists, get its value
+if(isset($_COOKIE['firstname'])){
+    $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
+   }
+
 switch($action){
     case 'login':
         include '../view/login.php';
@@ -67,6 +75,8 @@ switch($action){
 
     // Check and report the result
     if($regOutcome === 1){
+        //ceate Cookie!
+        setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');    
     $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
     include '../view/login.php';
     exit;
