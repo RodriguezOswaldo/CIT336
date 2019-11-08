@@ -31,7 +31,7 @@
             echo $message;
             }
             ?>
-            <form action="/dashboard/acme/accounts/index.php" method="POST">
+            <form action="/dashboard/acme/accounts/" method="POST">
                 <label for="emailAddress">Email Address:</label><input required type="email" name="emailAddress" id="emailAddress" <?php 
                     if(isset($clientFirstname)){
                         echo "value='$clientFirstname'";
