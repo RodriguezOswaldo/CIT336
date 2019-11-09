@@ -38,6 +38,9 @@ switch($action){
     case 'login':
         include '../view/login.php';
         break;
+    case 'registration':
+    include '../view/registration.php';
+    break;
     case 'register':
             // echo 'You are in the register case statement.';
             // exit;
@@ -77,28 +80,29 @@ switch($action){
     if($regOutcome === 1){
         //ceate Cookie!
         setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');    
-    $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-    include '../view/login.php';
-    exit;
-        } else {
-    $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-    include '../view/registration.php';
-    exit;
-        }
-    break;
+        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        include '../view/login.php';
+        exit;
+            } else {
+        $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+        include '../view/registration.php';
+        exit;
+            }
+        break;
     
     case 'Login':
-    $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-    $clientEmail = checkEmail($clientEmail);
-    $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
-    $passwordCheck = checkPassword($clientPassword);
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+        $clientEmail = checkEmail($clientEmail);
+        $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+        $passwordCheck = checkPassword($clientPassword);
+            
+        // Run basic checks, return if errors
+        if (empty($clientEmail) || empty($passwordCheck)) {
+        $message = '<p class="notice">Please provide a valid email address and password.</p>';
+        include '../view/login.php';
+        exit;
         
-    // Run basic checks, return if errors
-    if (empty($clientEmail) || empty($passwordCheck)) {
-     $message = '<p class="notice">Please provide a valid email address and password.</p>';
-     include '../view/login.php';
-     exit; 
-    }
+        }
    
     // A valid password exists, proceed with the login process
     // Query the client data based on the email address
