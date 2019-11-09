@@ -9,19 +9,19 @@ $navList = '<ul>';
 $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
 foreach ($categories as $category) {
  $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-}
-$navList .= '</ul>';
+    }
+    $navList .= '</ul>';
 
 
 if (isset($_SESSION['loggedin'])) {
     
-} else {
-    $_SESSION['loggedin'] = FALSE;
-}
-if (!$_SESSION['loggedin'] == TRUE) {
-    include "../view/home.php";
-    exit;
-}
+    } else {
+        $_SESSION['loggedin'] = FALSE;
+    }
+    if (!$_SESSION['loggedin'] == TRUE) {
+        include "../view/home.php";
+        exit;
+    }
 
 
 
@@ -51,7 +51,7 @@ if (!$_SESSION['loggedin'] == TRUE) {
         </nav>
 
         <main id="main">
-            <h1>Portal Admin</h1> 
+        <h1>Logged in <?php echo $_SESSION['clientData']['clientFirstname'];?></h1>
         </main>
 
         <footer id="footer">
