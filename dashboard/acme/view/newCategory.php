@@ -1,5 +1,24 @@
 <?php
 
+
+// Check if the clientLevel has been declared
+if (isset($_SESSION['clientData']['clientLevel'])) {
+    //Check if the lvl is = 1 don't give admin privileges
+        if ($_SESSION['clientData']['clientLevel'] == 1) {
+            include "../view/home.php";
+            exit;
+        }
+    }
+    //if user hasn't logged in display home view
+    if (isset($_SESSION['loggedin'])) {
+        
+    } else {
+        $_SESSION['loggedin'] = FALSE;
+    }
+    if (!$_SESSION['loggedin'] == TRUE) {
+        include "../view/login.php";
+        exit;
+    } 
 ?>
 <!doctype html>
 <html lang="en">

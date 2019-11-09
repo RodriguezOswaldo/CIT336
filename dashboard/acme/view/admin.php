@@ -50,8 +50,18 @@ if (isset($_SESSION['loggedin'])) {
             <?php echo $navList; ?>
         </nav>
 
-        <main id="main">
-        <h1>Logged in <?php echo $_SESSION['clientData']['clientFirstname'];?></h1>
+        <main class="adminMain " id="main">
+        <h1>Logged in as<span > <?php echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname'];?></span></h1>
+        <ul>
+            <li><strong>First Name: </strong><?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
+            <li><strong>Last Name: </strong><?php echo $_SESSION['clientData']['clientLastname']; ?></li>
+            <li><strong>Email Account: </strong><?php echo $_SESSION['clientData']['clientEmail']; ?></li>
+        </ul>
+        <?php
+              if ($_SESSION['clientData']['clientLevel'] > 1) {
+                echo '<p><a href="/dashboard/acme/products/">Go to Products Management</a></p>';
+            }
+        ?>
         </main>
 
         <footer id="footer">

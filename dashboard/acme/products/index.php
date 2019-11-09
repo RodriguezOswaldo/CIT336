@@ -39,8 +39,6 @@ $catList = buildID($categoriesID, $navList, $categories);
           $action = 'newProduct';
     }
   
-  
-  
   }
  switch ($action){
    case 'products':

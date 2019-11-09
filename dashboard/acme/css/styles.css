@@ -334,7 +334,9 @@ input {
     input:focus:valid {
     background-image: url('../images/valid.png');
     }
-
+.adminMain{
+    text-align: left;
+}
 /* Query */
 @media(min-width: 700px){
     header .logo{
