@@ -317,7 +317,13 @@ button:focus{
 
     }
 }
-
+.adminMain ul{
+    list-style: none;
+    margin:10px;
+}
+li{
+    line-height: 1.2;
+}
 
 /* FORMS! */
 input {
