@@ -119,11 +119,10 @@ if(isset($_COOKIE['firstname'])){
         exit;
         break;
     case 'Logout':
-         $_SESSION['loggedin'] = FALSE;
+        unset($_SESSION['loggedin']);
+        unset($_SESSION['clientData']);
         include '../view/home.php';
         exit;
-        
-    break;
 
     default:
         //$_SESSION['loggedin'] = FALSE;
