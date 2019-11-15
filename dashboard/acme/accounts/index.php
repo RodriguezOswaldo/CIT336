@@ -15,7 +15,7 @@ require_once '../library/functions.php';
 
 // Get the array of categories
 $categories = getCategories();
-
+=
 $navList = commonNavigation($categories);
 /****************************************************************
  *Displaying the navigation list stored in the navList variable *
