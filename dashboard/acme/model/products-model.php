@@ -51,4 +51,16 @@ function addProd($categoryId, $invName, $invDescription, $invImage, $invThumbnai
      //This sends the results from the rowCount above to the controller (used in showing a success message I assume)
      return $rowsChanged;
     }
+
+    // Get products by categoryId 
+function getProductsByCategory($categoryId){ 
+    $db = acmeConnect(); 
+    $sql = ' SELECT * FROM inventory WHERE categoryId = :categoryId'; 
+    $stmt = $db->prepare($sql); 
+    $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT); 
+    $stmt->execute(); 
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    $stmt->closeCursor(); 
+    return $products; 
+   }
 ?>

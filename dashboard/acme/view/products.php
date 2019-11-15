@@ -12,6 +12,35 @@ foreach ($categories as $category) {
 }
 $navList .= '</ul>';
 
+$indexCatIDtryarray = 0;
+$catNames = array();
+foreach ($categories as $category) {
+    //save the names in the array
+   $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
+    //increment the index
+    $indexCatIDtryarray = $indexCatIDtryarray + 1;
+}
+//$navList .= '</ul>';
+ // reset the index
+ $indexCatIDtryarray = 0;
+ $catList = '<select name="categoryId" id="categoryId" class="message3">';
+ $catList .= '<option value="Choose a category">Choose a category</option>';
+ 
+ foreach ($categoriesID as $categoryID) {
+  
+   $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
+   if (isset($categoryId)) {
+       if(urlencode($categoryID['categoryId']) === $categoryId) {
+           $catList .= ' selected ';
+           
+       }
+   }
+   $catList.= '>'.$catNames[$indexCatIDtryarray].'</option>';
+   //use the array to write the name according the index, in the sql they use the same class of organization
+   $indexCatIDtryarray = $indexCatIDtryarray + 1;
+}
+$catList .= '</select>';
+ 
 
 // Check if the clientLevel has been declared
 if (isset($_SESSION['clientData']['clientLevel'])) {
@@ -31,7 +60,9 @@ if (!$_SESSION['loggedin'] == TRUE) {
     include "../view/login.php";
     exit;
 } 
-
+if (isset($message)) { 
+    echo $message; 
+    } 
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +74,7 @@ if (!$_SESSION['loggedin'] == TRUE) {
     <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <title> Template | Acme Inc.</title>
+    <title> Products | Acme Inc.</title>
 </head>
 
 <body>
@@ -60,6 +91,18 @@ if (!$_SESSION['loggedin'] == TRUE) {
             <h1>Product Management</h1> 
             <a href="/dashboard/acme/products?action=newProduct">Add New Product</a> <br>
             <a href="/dashboard/acme/products?action=newCategory">Add New Category</a>
+      
+            <?php
+                if (isset($catList)) { 
+                echo '<h2>Products By Category</h2>'; 
+                echo '<p>Choose a category to see those products</p>'; 
+                echo $catList;    
+                }
+                ?>
+                <noscript>
+                <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+                </noscript>
+                <table id="productsDisplay"></table>
         </main>
 
         <footer id="footer">
@@ -67,6 +110,9 @@ if (!$_SESSION['loggedin'] == TRUE) {
             <p id="lastupdated">Last Updated: <?php echo date('j F, Y', getlastmod()) ?></p>
         </footer>
     </div>
+    <script src="../js/products.js">
+       
+    </script>
 </body>
 
 </html>

@@ -62,5 +62,32 @@
           return $catList;
      }
 
+    // Build the categories select list 
+    function buildCategoryList($categories){ 
+        //$categoriesID = getCategoriesID();
+     $catNames = getarrayscat();
+      
+    // Create an array to save the names for indexes in order to create the select option
+    $indexCatIDtryarray = 0;
+    
+    $catList = '<select name="categoryId" id="categoryList">';
+     $catList .= '<option value="empty">Choose a Category</option>';
+     foreach ($categories as $categoryID) {
+         
+         $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
+         if (isset($categoryId)) {
+             if(urlencode($categoryID['categoryId']) === $categoryId) {
+                 $catList .= ' selected ';
+             }
+         }
+         $catList.= '>'.$catNames[$indexCatIDtryarray].'</option>';
+         //use the array to write the name according the index, in the sql they use the same class of organization
+         $indexCatIDtryarray = $indexCatIDtryarray + 1;
+     }
+     $catList .= '</select>';
+        return $catList; 
+    }
+
+
     
 ?>
