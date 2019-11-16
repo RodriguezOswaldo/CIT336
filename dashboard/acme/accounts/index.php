@@ -15,7 +15,6 @@ require_once '../library/functions.php';
 
 // Get the array of categories
 $categories = getCategories();
-=
 $navList = commonNavigation($categories);
 /****************************************************************
  *Displaying the navigation list stored in the navList variable *
@@ -41,6 +40,9 @@ if(isset($_COOKIE['firstname'])){
     case 'login':
         include '../view/login.php';
         break;
+    case 'update':
+        include '../view/client-update.php';
+        break; 
     case 'register':
         //echo 'You are in the register case statement.';
         // Filter and store the data
