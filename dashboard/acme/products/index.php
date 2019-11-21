@@ -26,25 +26,25 @@ $catList = buildID($categoriesID, $navList, $categories);
 
 
  $action = filter_input(INPUT_POST, 'action');
- if ($action == NULL){
-  $action = filter_input(INPUT_GET, 'action');
+    if ($action == NULL){
+    $action = filter_input(INPUT_GET, 'action');
   
-  if ($action == NULL){
+    if ($action == NULL){
       $action = 'products';
-  }
-  if($action == 'newCategory.php'){
+    }
+    if($action == 'newCategory.php'){
           $action = 'newCategory';
     }
-  if($action == 'newProduct.php'){
+    if($action == 'newProduct.php'){
           $action = 'newProduct';
     }
   
   // Check if the firstname cookie exists, get its value
 if(isset($_COOKIE['firstname'])){
     $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
-   }
+}
 
- switch ($action){
+switch ($action){
     case 'products':
        include '../view/products.php';
     break;
@@ -92,7 +92,7 @@ if(isset($_COOKIE['firstname'])){
         $categoryId = filter_input(INPUT_POST, 'categoryId');
         $invVendor = filter_input(INPUT_POST, 'invVendor', FILTER_SANITIZE_STRING);
         $invStyle = filter_input(INPUT_POST, 'invStyle', FILTER_SANITIZE_STRING);
-    // Check for missing data
+        // Check for missing data
         //$categoryId = NULL;
         if( empty($invName)|| 
             empty($invDescription)|| 
@@ -110,8 +110,8 @@ if(isset($_COOKIE['firstname'])){
                 include '../view/newProduct.php';
                 exit;
             } 
-        // Send the data to the model
-        $regOutcome1 = addProd($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle);
+            // Send the data to the model
+            $regOutcome1 = addProd($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle);
             // Check and report the result 
         if($regOutcome1 === 1){
             echo '<div class="big"><p> New Product has been added to your inventory</p></div>';
@@ -140,17 +140,17 @@ if(isset($_COOKIE['firstname'])){
     case 'mod':
         $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         $prodInfo = getProductInfo($invId);
-        if(count($prodInfo)<1){
-        $message = 'Sorry, no product information could be found.';
-        }
-        include '../view/prod-update.php';
+            if(count($prodInfo)<1){
+                $message = 'Sorry, no product information could be found.';
+            }
+        include '../view/pro-update.php';
         exit;
-        break;
+    break;
     default:        
         $catList = buildID($categoriesID, $navList, $categories);
         include '../view/products.php';
-    break;
-}
+    break;  
+    }   
  }
 
 ?>

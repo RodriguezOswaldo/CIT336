@@ -69,11 +69,9 @@
       
     // Create an array to save the names for indexes in order to create the select option
     $indexCatIDtryarray = 0;
-    
     $catList = '<select name="categoryId" id="categoryList">';
      $catList .= '<option value="empty">Choose a Category</option>';
      foreach ($categories as $categoryID) {
-         
          $catList.= '<option value="'.urlencode($categoryID['categoryId']).'"';
          if (isset($categoryId)) {
              if(urlencode($categoryID['categoryId']) === $categoryId) {
