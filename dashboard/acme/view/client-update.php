@@ -7,10 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/dashboard/acme/css/normalize.css">
     <link rel="stylesheet" href="/dashboard/acme/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     <title> Login Page | Acme Inc.</title>
 </head>
 
@@ -25,6 +24,7 @@
         </nav>
 
         <main id="main">
+        <div class="loginbox">
         <h1>Update Account</h1><br><br>
    <h3>Use this form to update your name or email information</h3><br>
    <form action="../accounts/index.php" method="POST" class="reg">  
@@ -39,8 +39,8 @@
          <input type="submit" name="submit" value="Update Account" class="big1"> 
  
    </form>
-   <br><br><br>
-   
+   </div>
+   <div class="loginbox">
    <h2>Password Change</h2><br><br>
    <h3>Use this form to change this password</h3><br>
    <form action="../accounts/index.php" method="POST" class="reg"> 
@@ -53,7 +53,7 @@
    
    
     </form> 
-         
+   </div>
         </main>
 
         <footer id="footer">
