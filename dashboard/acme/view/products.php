@@ -62,7 +62,7 @@ if (!$_SESSION['loggedin'] == TRUE) {
 } 
 if (isset($message)) { 
     echo $message; 
-    } 
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -91,7 +91,13 @@ if (isset($message)) {
             <h1>Product Management</h1> 
             <a href="/dashboard/acme/products?action=newProduct">Add New Product</a> <br>
             <a href="/dashboard/acme/products?action=newCategory">Add New Category</a>
-      
+            <?php
+                if (isset($message)) { 
+                    echo $message; 
+                    } if(isset($prodList)){
+                        echo $prodList;
+                    }
+            ?>
             <?php
                 if (isset($catList)) { 
                 echo '<h2>Products By Category</h2>'; 
@@ -111,8 +117,9 @@ if (isset($message)) {
         </footer>
     </div>
     <script src="../js/products.js">
-       
+        
     </script>
 </body>
 
 </html>
+<?php unset($_SESSION['$message']);?>

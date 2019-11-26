@@ -10,7 +10,7 @@
                         <li>Mobile launch stand included</li>
                         <li><a href="#"><img id="iWantIt" src="/dashboard/acme/images/site/iwantit.jpg" alt="Add to cart button"></a></li>
                     </ul>
-                </article>
+                </article>   
         </div>
 
             <div class="section1">

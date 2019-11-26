@@ -58,10 +58,16 @@ if (isset($_SESSION['loggedin'])) {
             <li><strong>Email Account: </strong><?php echo $_SESSION['clientData']['clientEmail']; ?></li>
         </ul>
         <?php
-              if ($_SESSION['clientData']['clientLevel'] > 1) {
+              
+        ?> <h3><a href="../accounts/index.php?action=update"> Update Account Information </a></h3><br><?php if( $_SESSION['clientData']['clientLevel'] > 1) { 
+            echo "<h2 class ='letras'>Administrative Functions</h2><br>";
+            echo "<h3>Use the link below to manage products</h3><br>";
+              
+            if ($_SESSION['clientData']['clientLevel'] > 1) {
                 echo '<p><a href="/dashboard/acme/products/">Go to Products Management</a></p>';
             }
-        ?>
+            
+         }?>
         </main>
 
         <footer id="footer">

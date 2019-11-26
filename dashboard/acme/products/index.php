@@ -24,11 +24,10 @@ $navList = commonNavigation($categories);
 $catList = buildID($categoriesID, $navList, $categories);
 
 
-
  $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
-  
+    
     if ($action == NULL){
       $action = 'products';
     }
@@ -38,7 +37,7 @@ $catList = buildID($categoriesID, $navList, $categories);
     if($action == 'newProduct.php'){
           $action = 'newProduct';
     }
-  
+}
   // Check if the firstname cookie exists, get its value
 if(isset($_COOKIE['firstname'])){
     $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
@@ -48,7 +47,7 @@ switch ($action){
     case 'products':
        include '../view/products.php';
     break;
-    case 'newCategory':
+    case 'newCategory': 
        include '../view/newCategory.php';
     break;  
     case 'newProduct':
@@ -138,19 +137,90 @@ switch ($action){
     break;
 
     case 'mod':
+      
+        $categoryId = filter_input(INPUT_POST, 'categoryId');
         $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         $prodInfo = getProductInfo($invId);
             if(count($prodInfo)<1){
                 $message = 'Sorry, no product information could be found.';
             }
+           
         include '../view/pro-update.php';
         exit;
+    break;
+    case 'updateProd':
+           
+        $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT);
+        $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
+        $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
+        $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
+        $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
+        $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT);
+        $invSize = filter_input(INPUT_POST, 'invSize', FILTER_SANITIZE_NUMBER_INT);
+        $invWeight = filter_input(INPUT_POST, 'invWeight', FILTER_SANITIZE_NUMBER_INT);
+        $invLocation = filter_input(INPUT_POST, 'invLocation', FILTER_SANITIZE_STRING);
+        $invVendor = filter_input(INPUT_POST, 'invVendor', FILTER_SANITIZE_STRING);
+        $invStyle = filter_input(INPUT_POST, 'invStyle', FILTER_SANITIZE_STRING);
+        $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+
+        if (empty($indId) || empty($invName) || empty($invDescription) 
+        || empty($invImage) || empty($invThumbnail) || empty($invPrice) 
+        || empty($invStock) || empty($invSize) || empty($invWeight) 
+        || empty($invLocation) || empty($invVendor) || empty($invStyle)) {
+          
+        $message = '<p>Please complete all information for the item! Double check the category of the item.</p>';
+        include '../view/pro-update.php';
+        exit;
+        }
+        $insertResult = updateProduct($invName, $invDescription, 
+        $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, 
+        $invLocation, $invVendor, $invStyle, $invId);
+        //Check and show view
+        if ($insertResult) {
+            $message = "<p>Congratulations, $invName was successfully added.</p>";
+            header('location: /acme/products/');
+             exit;
+        } else {
+            $message = "<p>Error. The new product was not updated.</p>";
+            include '../view/pro-update.php';
+            exit;
+        }
+    break;
+    case 'del':
+        $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        $prodInfo = getProductInfo($invId);
+        if (count($prodInfo) < 1) {
+        $message = 'Sorry, no product information could be found.';
+        }
+        include '../view/pro-delete.php';
+        exit;
+    break; 
+    case 'deleteProd':
+    echo 'find the error';
+        $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
+        $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+        
+        $deleteResult = deleteProduct($invId);
+        if ($deleteResult) {
+            $message = "<p class='notice'>Congratulations, $invName was successfully deleted.</p>";
+            $_SESSION['message'] = $message;
+            echo 'find the error';
+            include '../view/products.php';
+        exit;
+        } else {
+            $message = "<p class='notice'>Error: $invName was not deleted.</p>";
+            $_SESSION['message'] = $message;
+            echo 'find the error';
+            include '../view/products.php';
+        exit;
+        }
     break;
     default:        
         $catList = buildID($categoriesID, $navList, $categories);
         include '../view/products.php';
     break;  
     }   
- }
+
 
 ?>

@@ -9,7 +9,7 @@ foreach ($categories as $category) {
     $indexCatIDtryarray = $indexCatIDtryarray + 1;
 }
 //$navList .= '</ul>';
- // reset the index
+ // reset the indexr
  $indexCatIDtryarray = 0;
  $catList = '<select name="categoryId" id="categoryId" class="message3">';
  $catList .= '<option value="Choose a category">Choose a category</option>';
@@ -85,88 +85,46 @@ if (isset($_SESSION['clientData']['clientLevel'])) {
                     <?PHP     
                         echo $catList;               
                     ?><br>
-                <label for="invName">Product Name</label> <br/>
-                <input type="text" name="invName" id="invName" <?php 
-                    if(isset($invName)){
-                        echo "value='$invName'";
-                    }elseif(isset($prodInfo['invName'])) {
-                        echo "value='$prodInfo[invName]'"; }
-                    ?> required > <br/>
-                    <label for="invDescription">Product Description</label> <br/>
-                    <textarea name="invDescription" id="invDescription" title="Description" maxlength="50" required><?php 
-                    if(isset($invDescription)){
-                        echo $invDescription;
-                    }elseif(isset($prodInfo['invDescription'])) {
-                        echo $prodInfo['invDescription']; }
-                    ?></textarea><br/>
-                    <label for="invImage">Product Image(path to image)</label> <br/>
-                    <input type="text" name="invImage" id="invImage" title="Image" <?php 
-                    if(isset($invImage)){
-                        echo "value='$invImage'";
-                    }elseif(isset($prodInfo['invImage'])) {
-                        echo "value='$prodInfo[invImage]'"; }
-                    ?> required> <br/>
-                    <label for="invThumbnail">Product Thumbnail(path to thumbnail</label> <br/>
-                    <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" <?php 
-                    if(isset($invThumbnail)){
-                        echo "value='$invThumbnail'";
-                    }elseif(isset($prodInfo['invThumbnail'])) {
-                        echo "value='$prodInfo[invThumbnail]'"; }
-                    ?> required><br/>
-                    <label for="invPrice">Product Price</label> <br/>
-                    <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01" <?php 
-                    if(isset($invPrice)){
-                        echo "value='$invPrice'";
-                    }elseif(isset($prodInfo['invPrice'])) {
-                        echo "value='$prodInfo[invPrice]'"; }
-                    ?> required ><br/>
-                    <label for="invStock"># In Stock</label> <br/>
-                    <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" <?php 
-                    if(isset($invStock)){
-                        echo "value='$invStock'";
-                    }elseif(isset($prodInfo['invStock'])) {
-                        echo "value='$prodInfo[invStock]'"; }
-                    ?> required><br/>
-                    <label for="invSize">Shipping Size(W x H x L in inches</label> <br/>
-                    <input name="invSize" id="invSize" title="Shipping Size"  type="number" min="0"  <?php 
-                    if(isset($invSize)){
-                        echo "value='$invSize'";
-                    }elseif(isset($prodInfo['invSize'])) {
-                        echo "value='$prodInfo[invSize]'"; }
-                    ?> required> <br/>
-                    <label for="invWeight">Weight(lbs)</label> <br/>
-                    <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01"  <?php 
-                    if(isset($invWeight)){
-                        echo "value='$invWeight'";
-                    }elseif(isset($prodInfo['invWeight'])) {
-                        echo "value='$prodInfo[invWeight]'"; }
-                    ?> required><br/>
-                    <label for="invLocation">Location(city name)</label> <br/>
-                    <input name="invLocation" id="invLocation" type="text" <?php 
-                    if(isset($invLocation)){
-                        echo "value='$invLocation'";
-                    }elseif(isset($prodInfo['invLocation'])) {
-                        echo "value='$prodInfo[invLocation]'"; }
-                    ?> required> <br/>
-                    <label for="invVendor">Vendor Name</label> <br/>
-                    <input name="invVendor" id="invVendor" title="Vendor Name"  type="text" <?php 
-                    if(isset($invVendor)){
-                        echo "value='$invVendor'";
-                    }elseif(isset($prodInfo['invVendor'])) {
-                        echo "value='$prodInfo[invVendor]'"; }
-                    ?> required > <br/>
-                    <label for="invStyle">Primary Material</label> <br/>
-                    <input name="invStyle" id="invStyle" type="text" <?php 
-                    if(isset($invStyle)){
-                        echo "value='$invStyle'";
-                    }elseif(isset($prodInfo['invStyle'])) {
-                        echo "value='$prodInfo[invStyle]'"; }
-                    ?> required > <br/>
-                    <input type="submit" name="submit" value="Update Product" class="log"/>       
-                    <input type="hidden" name="action" value="updateProd">
-                    <input type="hidden" name="invId" 
-                    value="<?php if(isset($prodInfo['invId'])){ echo $prodInfo['invId'];} 
-                    elseif(isset($invId)){ echo $invId; }?>">
+                 <label>Product Name</label> <br/>   
+        <input type="text" name="invName" id="invName" <?php if(isset($invName)){echo "value='$invName'";} elseif(isset($prodInfo['invName'])) {
+         echo "value='$prodInfo[invName]'"; } ?> required> <br/>
+         <label>Product Description</label> <br/>
+        <textarea name="invDescription" id="invDescription" title="Description" required><?php if(isset($invDescription)){echo $invDescription;} elseif(isset($prodInfo['invDescription'])) {
+         echo $prodInfo['invDescription']; } ?>  </textarea><br/>
+        <label>Product Image(path to image)</label> <br/>
+        <input type="text" name="invImage" id="invImage" title="Image" <?php if(isset($invImage)){echo "value='$invImage'";} elseif(isset($prodInfo['invImage'])) {
+         echo "value='$prodInfo[invImage]'"; }?> required> <br/>
+        <label>Product Thumbnail(path to thumbnail</label> <br/>
+        <input type="text" name="invThumbnail" id="invThumbnail" title="Thumbnail" <?PHP if(isset($invThumbnail)){ echo "value='$invThumbnail'";} elseif(isset($prodInfo['invThumbnail'])) {
+         echo "value='$prodInfo[invThumbnail]'"; } ?> required><br/>
+        <label>Product Price</label> <br/>
+        <input name="invPrice" id="invPrice" title="Product Price" placeholder="Price $" type="number" min="0" step="0.01" <?php if(isset($invPrice)){echo "value='$invPrice'";} elseif(isset($prodInfo['invPrice'])) {
+         echo "value='$prodInfo[invPrice]'"; } ?> required><br/>
+        <label># In Stock</label> <br/>
+        <input name="invStock" id="invStock" title="Amount in Stock" placeholder="Inventory" type="number" min="0" <?php if(isset($invStock)){echo "value='$invStock'";} elseif(isset($prodInfo['invStock'])) {
+         echo "value='$prodInfo[invStock]'"; } ?> required><br/>
+        <label>Shipping Size(W x H x L in inches</label> <br/>
+        <input name="invSize" id="invSize" title="Shipping Size" placeholder="Inches" type="number" min="0"  step="0.01" <?php if(isset($invSize)){echo "value='$invSize'";} elseif(isset($prodInfo['invSize'])) {
+         echo "value='$prodInfo[invSize]'"; } ?> required> <br/>
+        <label>Weight(lbs)</label> <br/>
+        <input name="invWeight" id="invWeight" title="Weight" placeholder="Lbs" type="number" min="0"  step="0.01" <?php if(isset($invWeight)){echo "value='$invWeight'";} elseif(isset($prodInfo['invWeight'])) {
+         echo "value='$prodInfo[invWeight]'"; } ?> required><br/>
+        <label>Location(city name)</label> <br/>
+        <input name="invLocation" id="invLocation" type="text" <?php if(isset($invLocation)){echo "value='$invLocation'";} elseif(isset($prodInfo['invLocation'])) {
+         echo "value='$prodInfo[invLocation]'"; } ?> required> <br/>
+        <label>Vendor Name</label> <br/>
+        <input name="invVendor" id="invVendor" title="Vendor Name"  type="text" <?php if(isset($invVendor)){echo "value='$invVendor'";} elseif(isset($prodInfo['invVendor'])) {
+         echo "value='$prodInfo[invVendor]'"; }?> required> <br/>
+        <label>Primary Material</label> <br/>
+        <input name="invStyle" id="invStyle" type="text" <?php if(isset($invStyle)){echo "value='$invStyle'";} elseif(isset($prodInfo['invStyle'])) {
+         echo "value='$prodInfo[invStyle]'"; } ?> required> <br/><br>
+                             
+        <input type="submit" name="submit" value="Update Product" class="log"/>       
+        <input type="hidden" name="action" value="updateProd">
+        <input type="hidden" name="invId" 
+        value="<?php if(isset($prodInfo['invId'])){ echo $prodInfo['invId'];} 
+        elseif(isset($invId)){ echo $invId; }?>">
+       
                 </fieldset>
             </form>    
         </main>
