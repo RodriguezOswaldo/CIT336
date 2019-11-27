@@ -327,9 +327,10 @@ li{
 /* style the product view */
 #prod-display, .prod-details{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: 1fr; 
     grid-gap:  10px;
 }
+
 #prod-display a:hover, .prod-details a:hover{
         background: #fff;
         color: #de2226;
@@ -410,6 +411,16 @@ input {
         transform:scale(1); 
         margin-top:30px;
         margin-bottom:10px;
+    }
+    #prod-display, .prod-details{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media(min-width: 900px){
+    #prod-display, .prod-details{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
