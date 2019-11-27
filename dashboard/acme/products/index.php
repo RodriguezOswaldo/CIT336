@@ -27,7 +27,7 @@ $catList = buildID($categoriesID, $navList, $categories);
  $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL){
     $action = filter_input(INPUT_GET, 'action');
-    
+    }
     if ($action == NULL){
       $action = 'products';
     }
@@ -37,7 +37,7 @@ $catList = buildID($categoriesID, $navList, $categories);
     if($action == 'newProduct.php'){
           $action = 'newProduct';
     }
-}
+
   // Check if the firstname cookie exists, get its value
 if(isset($_COOKIE['firstname'])){
     $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
@@ -216,6 +216,21 @@ switch ($action){
         exit;
         }
     break;
+    case 'category':
+        $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+        $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
+        
+        $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
+        $products = getProductsByCategoryname($categoryName);
+        if(!count($products)){
+            $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
+        }else{
+            $prodDisplay =buildProductsDisplay($products);
+        }
+        // echo $prodDisplay;
+        //$prodInfo = getProductInfo($invId);       
+        include '../view/category.php';
+    break;
     default:        
         $catList = buildID($categoriesID, $navList, $categories);
         include '../view/products.php';
@@ -223,4 +238,4 @@ switch ($action){
     }   
 
 
-?>
+?>    

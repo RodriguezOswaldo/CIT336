@@ -2,6 +2,20 @@
     /*
      * Custom Functions Library
      */ 
+    //function will build a display of products within an unordered list.
+    function buildProductsDisplay($products){
+        $pd = '<ul id="prod-display">';
+        foreach ($products as $product) {
+         $pd .= '<li>';
+         $pd .= "<img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'>";
+         $pd .= '<hr>';
+         $pd .= "<h2>$product[invName]</h2>";
+         $pd .= "<span>$product[invPrice]</span>";
+         $pd .= '</li>';
+        }
+        $pd .= '</ul>';
+        return $pd;
+       }
 
     function checkEmail($clientEmail){
         $valEmail = filter_var($clientEmail, FILTER_VALIDATE_EMAIL);
@@ -17,7 +31,7 @@
 
 
        //Common Navigation bar
-    function commonNavigation() {
+    function commonNavigation($categories) {
        
         $categories = getCategories();
         /**************************
@@ -26,9 +40,9 @@
         // var_dump($categories);
         // 	exit;
         $navList = '<ul>';
-        $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
+        $navList .= "<li><a href='../acme/index.php' title='View the Acme home page'>Home</a></li>";
         foreach ($categories as $category) {
-         $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+         $navList .=  "<li><a href='../acme/products/?action=category&categoryName=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
         }
         $navList .= '</ul>';
         return $navList;
@@ -38,7 +52,7 @@
         $indexCatIDtryarray = 0;
         $catNames = array();
         foreach ($categories as $category) {
-         $navList .= "<li><a href='../index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+         $navList .= "<li><a href='../    index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
             //save the names in the array
            $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
             //increment the index
