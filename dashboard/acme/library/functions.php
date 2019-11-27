@@ -9,7 +9,7 @@
          $pd .= '<li>';
          $pd .= "<img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'>";
          $pd .= '<hr>';
-         $pd .= "<h2>$product[invName]</h2>";
+         $pd .= "<a href ='../products?action=view-product&id=$product[invId]'><h2>$product[invName]</h2></a>";
          $pd .= "<span>$product[invPrice]</span>";
          $pd .= '</li>';
         }
@@ -42,9 +42,10 @@
         $navList = '<ul>';
         $navList .= "<li><a href='../acme/index.php' title='View the Acme home page'>Home</a></li>";
         foreach ($categories as $category) {
-         $navList .=  "<li><a href='../acme/products/?action=category&categoryName=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+            $navList .=  "<li><a href='../acme/products/?action=category&categoryName=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
         }
         $navList .= '</ul>';
+
         return $navList;
     }
 
@@ -52,7 +53,7 @@
         $indexCatIDtryarray = 0;
         $catNames = array();
         foreach ($categories as $category) {
-         $navList .= "<li><a href='../    index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+         $navList .= "<li><a href='/dashboard/acme/products/?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
             //save the names in the array
            $catNames[$indexCatIDtryarray] = urlencode($category['categoryName']);
             //increment the index
@@ -100,6 +101,25 @@
         return $catList; 
     }
 
-
+//display items views by categories
+    function buildProductsView($products){
+        $pd = '<div class="prod-details">';
+       
+    
+        $pd .= "<div><h1>$products[invName]</h1>";
+        $pd .= "<img src='$products[invImage]' alt='Image of $products[invName] on Acme.com'></div>";
+        $pd .= "<div id='vendor'><h3>By $products[invVendor]</h3>";
+        $pd .= "<h2>$products[invStock] left in stock.</h2>";
+        $pd .= "<p>$products[invDescription]</p>";
+        $pd .= "<ul><li>Size: $products[invSize] in&sup3;</li>";
+        $pd .= "<li>Weight: $products[invWeight] lbs</li>";
+        $pd .= "<li>Material: $products[invStyle]</li></ul>";
+        $pd .= "<h2 class='price'>$$products[invPrice]</h2>";
+        $pd .= "<h3>Ships from $products[invLocation]</h3></div>";
+        $pd .= "</div>";
+        
+        return $pd;
+    }
+       
     
 ?>

@@ -1,6 +1,6 @@
 <!-- <ul>
                 <li>
-                    <a href="#" title="Acme Home Page"class="active">Home</a>
+                    <a href="/index.php" title="Acme Home Page"class="active">Home</a>
                 </li>
                 <li>
                     <a href="#" title="Cannons in our inventory">Cannon</a>

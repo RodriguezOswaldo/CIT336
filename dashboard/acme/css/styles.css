@@ -324,7 +324,10 @@ button:focus{
 li{
     line-height: 1.2;
 }
-
+/* style the product view */
+#prod-display{
+    background: #2ecc71;
+}
 /* FORMS! */
 input {
     background-position: 0% 50%;

@@ -231,6 +231,21 @@ switch ($action){
         //$prodInfo = getProductInfo($invId);       
         include '../view/category.php';
     break;
+    case 'view-product':
+    
+        $invId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
+        $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
+        $products = getProductInfo($invId);
+        if(!count($products)){
+            $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
+        } else {
+            $prodDisplay = buildProductsView($products);
+        }
+     
+        //$prodInfo = getProductInfo($invId);       
+        include '../view/product-view.php';    
+    break;  
     default:        
         $catList = buildID($categoriesID, $navList, $categories);
         include '../view/products.php';
