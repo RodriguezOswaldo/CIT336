@@ -4,16 +4,16 @@
      */ 
     //function will build a display of products within an unordered list.
     function buildProductsDisplay($products){
-        $pd = '<ul id="prod-display">';
+        $pd = '<div id="prod-display">';
         foreach ($products as $product) {
-         $pd .= '<li>';
-         $pd .= "<img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'>";
+         $pd .= '<div>';
+         $pd .= "<img class='img-fluid' src='$product[invImage]' alt='Image of $product[invName] on Acme.com'>";
          $pd .= '<hr>';
          $pd .= "<a href ='../products?action=view-product&id=$product[invId]'><h2>$product[invName]</h2></a>";
          $pd .= "<span>$product[invPrice]</span>";
-         $pd .= '</li>';
+         $pd .= '</div>';
         }
-        $pd .= '</ul>';
+        $pd .= '</div>';
         return $pd;
        }
 
@@ -107,13 +107,15 @@
        
     
         $pd .= "<div><h1>$products[invName]</h1>";
-        $pd .= "<img src='$products[invImage]' alt='Image of $products[invName] on Acme.com'></div>";
+        $pd .= "<img class='img-fluid' src='$products[invImage]' alt='Image of $products[invName] on Acme.com'></div>";
         $pd .= "<div id='vendor'><h3>By $products[invVendor]</h3>";
         $pd .= "<h2>$products[invStock] left in stock.</h2>";
         $pd .= "<p>$products[invDescription]</p>";
-        $pd .= "<ul><li>Size: $products[invSize] in&sup3;</li>";
+        $pd .= "<ul>";
+        $pd .= "<li>Size: $products[invSize] in&sup3;</li>";
         $pd .= "<li>Weight: $products[invWeight] lbs</li>";
-        $pd .= "<li>Material: $products[invStyle]</li></ul>";
+        $pd .= "<li>Material: $products[invStyle]</li>";
+        $pd .= "</ul>";
         $pd .= "<h2 class='price'>$$products[invPrice]</h2>";
         $pd .= "<h3>Ships from $products[invLocation]</h3></div>";
         $pd .= "</div>";
