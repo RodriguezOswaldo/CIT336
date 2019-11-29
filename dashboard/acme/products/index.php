@@ -225,7 +225,7 @@ switch ($action){
         if(!count($products)){
             $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
         }else{
-            $prodDisplay =buildProductsDisplay($products);
+            $prodDisplay = buildProductsDisplay($products);
         }
         // echo $prodDisplay;
         //$prodInfo = getProductInfo($invId);       
