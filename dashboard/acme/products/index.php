@@ -14,6 +14,8 @@ session_start();
  //Get the custom functions 
  require_once '../library/functions.php';
 
+ require_once '../model/uploads-model.php';
+
  // Get the array of categories
 $categories = getCategories();
 // Get the array of categories ID
@@ -237,10 +239,15 @@ switch ($action){
         $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
         $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
         $products = getProductInfo($invId);
+        //Calling the tumb pic
+        $cont = $invId;
+
         if(!count($products)){
             $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
         } else {
             $prodDisplay = buildProductsView($products);
+            $prodInfo = getImages();
+            $printImage = buildProductsImages($prodInfo);
         }
      
         //$prodInfo = getProductInfo($invId);       

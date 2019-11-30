@@ -136,6 +136,18 @@ function makeThumbnailName($image) {
     return $image;
    }
 
+function buildProductsImages($imageArray){
+    $pd = '<figure class="images">';
+    foreach ($imageArray as $prod) {
+        $fileN = pathinfo($prod["imgName"], PATHINFO_FILENAME);
+        $extension = substr($fileN, -2);
+        if($prod['invId']== $GLOBALS['cont'] && $extension != 'tn'){
+            $pd .="<img src='$prod[imgPath]' alt='Image of $prod[imgName] on Acme.com'>";
+        }
+    }
+    $pd .= '</div>';
+    return $pd;
+}
 // Build images display for image management view
 function buildImageDisplay($imageArray) {
     $id = '<ul id="image-display">';

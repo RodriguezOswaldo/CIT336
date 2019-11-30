@@ -44,7 +44,12 @@ foreach ($categories as $category) {
                 <?php if(isset($prodDisplay)){ 
                     echo $prodDisplay; 
                 } ?>
-   
+                <hr>
+                 <?php if(isset($printImage)){
+                            echo $printImage;
+                        }else{
+                            echo 'Hello World!';
+                        } ?>
         </main>
 
         <footer id="footer">

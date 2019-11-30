@@ -62,4 +62,6 @@ function checkExistingImage($imgName){
     $stmt->closeCursor();
     return $imageMatch;
    }
+
+   
 ?>
