@@ -38,7 +38,7 @@ if (isset($_SESSION['message'])) {
             <?php echo $navList; ?>
         </nav>
 
-        <main class="adminMain " id="main">
+        <main class="adminMain image-management" id="main">
             <h1>Image Management</h1>
             <p class="welc-message"> Welcome to the image management page please choose one of the following options.</p>       
             <h2>Add New Product Image</h2>
@@ -47,7 +47,7 @@ if (isset($_SESSION['message'])) {
             echo $message;
             } ?>
 
-            <form action="/dashboard/acme/uploads/" method="post" enctype="multipart/form-data">
+            <form class="product-image" action="/dashboard/acme/uploads/" method="post" enctype="multipart/form-data">
                 <label for="invItem">Product</label><br>
                 <?php echo $prodSelect; ?><br><br>
                 <label>Upload Image:</label><br>

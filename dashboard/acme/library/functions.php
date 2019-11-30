@@ -10,7 +10,7 @@
          $pd .= "<img class='img-fluid' src='$product[invImage]' alt='Image of $product[invName] on Acme.com'>";
          $pd .= '<hr>';
          $pd .= "<a href ='../products?action=view-product&id=$product[invId]'><h2>$product[invName]</h2></a>";
-         $pd .= "<span>$product[invPrice]</span>";
+         $pd .= "<span class='price' >$product[invPrice]</span>";
          $pd .= '</div>';
         }
         $pd .= '</div>';

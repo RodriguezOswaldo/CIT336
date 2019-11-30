@@ -359,8 +359,58 @@ li{
 #prod-display div span{
     font-size:1.5em;
 }
+.prod-details{
+    font-size: 1em;
+}
 #prod-display div span:before{
     content: '$';
+}
+#prod-display div .price, .prod-details .price{
+    color: red;
+    font-size: 1.5em;
+}
+.prod-details .price{
+    font-size: 2em;
+}
+.prod-details #vendor{
+    font-weight: bolder;
+}
+.image-management{
+    margin:10px;
+}
+.image-management h1{
+    text-align: center!important;
+}
+.image-management .product-image{
+    margin: 10px;
+}
+.image-management .product-image label{
+    font-size: 1em;
+    color:red;
+}
+.image-management .product-image input, select{
+    
+        margin: 0px auto 20px auto; 
+        text-align: center;
+        width: 55%;
+        border-radius: 10px;
+        background: #fff;
+        font-size:1.3em;
+        color:#de2226;
+        border: 1px solid #de2226;
+        padding:5px 0 5px 0;
+}
+
+.image-management .product-image input:focus, select:focus{
+    border: 1px solid #fff;
+    background:turquoise;
+    color:#fff;
+}
+#image-display{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-column-gap: 10px;
+
 }
 /* FORMS! */
 input {
