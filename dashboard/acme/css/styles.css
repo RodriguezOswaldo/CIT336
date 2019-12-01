@@ -325,7 +325,7 @@ li{
     line-height: 1.2;
 }
 /* style the product view */
-#prod-display, .prod-details{
+#prod-display, .prod-details, .images{
     display: grid;
     grid-template-columns: 1fr; 
     grid-gap:  10px;
@@ -462,13 +462,13 @@ input {
         margin-top:30px;
         margin-bottom:10px;
     }
-    #prod-display, .prod-details{
+    #prod-display, .prod-details, .images{
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 @media(min-width: 900px){
-    #prod-display, .prod-details{
+    #prod-display, .prod-details, .images{
         display: grid;
         grid-template-columns: repeat(3, 1fr); 
     }

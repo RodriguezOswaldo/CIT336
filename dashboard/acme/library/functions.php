@@ -142,10 +142,10 @@ function buildProductsImages($imageArray){
         $fileN = pathinfo($prod["imgName"], PATHINFO_FILENAME);
         $extension = substr($fileN, -2);
         if($prod['invId']== $GLOBALS['cont'] && $extension != 'tn'){
-            $pd .="<img src='$prod[imgPath]' alt='Image of $prod[imgName] on Acme.com'>";
+            $pd .="<img src='$prod[imgPath]' alt='$prod[imgName] image on Acme.com'>";
         }
     }
-    $pd .= '</div>';
+    $pd .= '</figure>';
     return $pd;
 }
 // Build images display for image management view
