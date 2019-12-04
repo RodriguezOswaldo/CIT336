@@ -51,7 +51,8 @@ if (isset($_SESSION['loggedin'])) {
         </nav>
 
         <main class="adminMain " id="main">
-        <h1>Logged in as<span > <?php echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname'];?></span></h1>
+        <h1>Logged in as<span>
+          <?php echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname'];?></span></h1>
         <ul>
             <li><strong>First Name: </strong><?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
             <li><strong>Last Name: </strong><?php echo $_SESSION['clientData']['clientLastname']; ?></li>

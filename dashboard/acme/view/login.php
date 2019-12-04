@@ -8,6 +8,9 @@ if ($_SESSION['loggedin'] == TRUE) {
     include "../view/admin.php";
     exit;
 }
+
+
+
 ?>
 <!doctype html>
 <html lang="en">

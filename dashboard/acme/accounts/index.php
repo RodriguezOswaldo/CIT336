@@ -122,8 +122,11 @@ switch ($action){
         case 'Logout':
             unset($_SESSION['loggedin']);
             unset($_SESSION['clientData']);
+            setcookie('firstname', '', strtotime('-1 year'), '/');
+            unset($_COOKIE['firstname']);
+            unset($cookieFirstname);
             include '../view/home.php';
-            exit;
+        exit;
         break;
         // Client Update
         case 'Update':
