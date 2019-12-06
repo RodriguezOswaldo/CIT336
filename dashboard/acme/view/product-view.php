@@ -51,6 +51,13 @@ $categories = getCategories();
                         }else{
                             echo 'Hello World!';}
                          ?>
+                         <br>
+                         <hr>
+                         <?
+                         echo '<br>';
+                         echo '<p style="color:red; margin:20px;">Here, I\'ll echo the review form</p>';
+                         echo '<br>';
+                         ?>
         </main>
 
         <footer id="footer">
