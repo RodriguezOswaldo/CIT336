@@ -5,12 +5,12 @@ require_once '../model/acme-model.php';
 // Get the array of categories
 $categories = getCategories();
 //Creating the dynamic navigation bar
-$navList = '<ul>';
-$navList .= "<li><a href='/dashboard/acme/index.php' title='View the Acme home page'>Home</a></li>";
-foreach ($categories as $category) {
- $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-    }
-    $navList .= '</ul>';
+// $navList = '<ul>';
+// $navList .= "<li><a href='/dashboard/acme/index.php' title='View the Acme home page'>Home</a></li>";
+// foreach ($categories as $category) {
+//  $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+//     }
+//     $navList .= '</ul>';
 ?>
 <!doctype html>
 <html lang="en">
