@@ -32,6 +32,7 @@ function getReviewsByClientId($clientId) {
     $stmt->closeCursor();
     return $reviews;
 }
+
 function getReviewById($reviewId) {
     $db = acmeConnect();
     $sql = 'SELECT * FROM reviews WHERE reviewId = :reviewId'; 
@@ -42,6 +43,7 @@ function getReviewById($reviewId) {
     $stmt->closeCursor();
     return $review;
 }
+
 function updateReview($reviewId, $reviewText) {
     $db = acmeConnect();
     $sql = 'UPDATE reviews SET reviewText = :reviewText WHERE reviewId = :reviewId';
@@ -53,6 +55,7 @@ function updateReview($reviewId, $reviewText) {
     $stmt->closeCursor();
     return $rowsChanged;
 }
+
 function deleteReview($reviewId) {
     $db = acmeConnect();
     $sql = 'DELETE reviewText FROM reviews WHERE reviewId = :reviewId';

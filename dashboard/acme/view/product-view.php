@@ -54,10 +54,10 @@ $categories = getCategories();
                          ?>
                          <br>
                          <hr>
-                         <?
-                         echo '<br>';
-                         echo '<p style="color:red; margin:20px;">Here, I\'ll echo the review form</p>';
-                         echo '<br>';
+                         <?php
+                         echo '<h1>Customer Reviews</h1>';
+                         echo '<p>Please log in <a href=../reviews?action=edit-review-view>here</a> to review this product</p>'
+                
                          ?>
         </main>
 

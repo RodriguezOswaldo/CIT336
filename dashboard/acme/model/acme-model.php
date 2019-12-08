@@ -21,6 +21,7 @@ function getCategories(){
     return $categories;
    }
 
+   
    function getCategoriesID(){
     // Create a connection object from the acme connection function
     $db = acmeConnect(); 

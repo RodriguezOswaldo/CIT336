@@ -51,9 +51,18 @@ switch ($action) {
             header("location: /acme/products?action=view-product&id=$invId");
             exit;
         }
+        
         break;
-    case 'edit-review-view':   
-        # code... 
+    case 'edit-review-view':  
+         //if user hasn't logged in display log in view
+        if (isset($_SESSION['loggedin'])) {
+            
+        } else {
+            $_SESSION['loggedin'] = FALSE;
+            include "../view/login.php";
+        }
+        if (!$_SESSION['loggedin'] == TRUE) {
+        } 
         break;
     case 'submit-review-updated':
         # code... 
@@ -74,7 +83,7 @@ switch ($action) {
                 
         if ($deleteReviewResult < 1) {
                 $message = "<p>Sorry, but your review wasn't deleted. Please try again.</p>";
-                include ($_SERVER['DOCUMENT_ROOT'].'/view/review-delete.php');
+                include '/view/review-delete.php';
                 exit;
         } else{
                 $message = "<p>your review was deleted successfully.</p>";
