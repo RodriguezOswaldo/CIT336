@@ -49,7 +49,8 @@ $categories = getCategories();
                   if(isset($printImage)){
                             echo $printImage;
                         }else{
-                            echo 'Hello World!';}
+                            echo 'There is not an image for this product';
+                        }
                          ?>
                          <br>
                          <hr>

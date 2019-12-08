@@ -40,6 +40,17 @@ switch ($action) {
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
         $clientId = $_SESSION['clientData']['clientId'];
+        $addReviewResult = addReview($invId, $clientId, $reviewText);
+                
+        if ($addReviewResult < 1) {
+            $message  = "<p>Please add a review. Please try again.</p>";
+            header("location: /acme/products?action=view-product&id=$invId");
+            exit;
+        } else{
+            $message = "<p>your review was added successfully.</p>";
+            header("location: /acme/products?action=view-product&id=$invId");
+            exit;
+        }
         break;
     case 'submit-review':   
         # code... 
