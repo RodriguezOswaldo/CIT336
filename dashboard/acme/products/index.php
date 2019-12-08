@@ -233,6 +233,7 @@ switch ($action){
         //$prodInfo = getProductInfo($invId);       
         include '../view/category.php';
     break;
+    //Este case es llamado desde el link que abre el products details
     case 'view-product':
     
         $invId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

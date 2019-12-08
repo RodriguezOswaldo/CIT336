@@ -42,27 +42,45 @@ switch ($action) {
         $clientId = $_SESSION['clientData']['clientId'];
         $addReviewResult = addReview($invId, $clientId, $reviewText);
                 
-        if ($addReviewResult < 1) {
+        if ($addReviewResult < 1){
             $message  = "<p>Please add a review. Please try again.</p>";
             header("location: /acme/products?action=view-product&id=$invId");
             exit;
-        } else{
+        }else{
             $message = "<p>your review was added successfully.</p>";
             header("location: /acme/products?action=view-product&id=$invId");
             exit;
         }
         break;
-    case 'submit-review':   
+    case 'edit-review-view':   
         # code... 
         break;
-    case 'review-update':
+    case 'submit-review-updated':
         # code... 
         break;
     case 'display-review-updated':
         # code...
         break;
     case 'delete-review':
-        # code... 
+        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+        $review = getReviewById($reviewId);
+        if (empty($review)) {
+                $message = "Sorry, review could not be found";
+                header('location: /acme/accounts');
+                exit;
+        }
+        
+        $deleteReviewResult = deleteReview($reviewId);
+                
+        if ($deleteReviewResult < 1) {
+                $message = "<p>Sorry, but your review wasn't deleted. Please try again.</p>";
+                include ($_SERVER['DOCUMENT_ROOT'].'/view/review-delete.php');
+                exit;
+        } else{
+                $message = "<p>your review was deleted successfully.</p>";
+                header('location: /accounts');
+                exit;
+        } 
         break;
     default:
         if (isset($_SESSION['loggedin'])) {
