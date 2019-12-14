@@ -40,7 +40,6 @@ $categories = getCategories();
             <?php if(isset($message)){
                 echo $message; } 
             ?>
-
                 <?php if(isset($prodDisplay)){ 
                     echo $prodDisplay; 
                 } ?>
@@ -69,17 +68,16 @@ $categories = getCategories();
                             echo "<p>Make sure you are <a href='/dashboard/acme/accounts?action=login'>Log in</a> to review this product</p>";
                         }else{?><div> <form action="/dashboard/acme/reviews/" method="post">
                             <h2>Add Review</h2>
-                            <label for="reviewText"></label>Name:
-                            <?php echo substr($_SESSION['clientData']['clientFirstname'],0,1). $_SESSION['clientData']['clientLastname']."</label>";?>
-                            <textarea name="reviewText" id="reviewText" cols="30" rows="10" value="<?php echo $cont;?>"></textarea>
-                            <input type="hidden" name="invId" value=<?php echo $cont;?>>
+                            <label class="labels" for="reviewText"></label>Name:
+                            <?php echo substr($_SESSION['clientData']['clientFirstname'],0,1)."."." " . $_SESSION['clientData']['clientLastname']."</label>";?><br>
+                            <textarea name="reviewText" id="reviewText" cols="30" rows="4" value="<?php echo $cont;?>"></textarea><br>
+                            <input type="hidden" name="invId" value=<?php echo $invId; ?>>
                             <input type="hidden" name="action" value="add-new-review">
                             <input type="submit" value="Submit Review">
                         </form></div><?php 
                         }if(isset($imprimir)){
                             echo $imprimir;
                         }
-                        
                         ?>
                         
                     

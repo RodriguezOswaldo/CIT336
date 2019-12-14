@@ -36,6 +36,8 @@ if ($action == NULL){
 }
 switch ($action) {
     case 'add-new-review':
+    // echo 'you made it';
+    // exit;
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $clientId = $_SESSION['clientData']['clientId'];
@@ -43,43 +45,44 @@ switch ($action) {
         $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
         $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
         $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
-        $cont = $invId;
-        $products = getProductInfo($cont);
+        // $cont = $invId;
+        $products = getProductInfo($invId);
         $prodDisplay = buildProductsView($products);
         $prodInfo = getImages();
         $imprimeImage = buildImageDisplay($prodInfo);
-        $getReviewsByItem = getReviewById($reviewId);
+        // $newReview = getReviewById($reviewId);
         // echo getReviewById($reviewId);
         
+        if(empty($reviewText)){
+            echo '<p class="message5">The review cannot be empty.</p>';
+            include '../view/product-view.php';
+            exit;
+        }
+        //Sending data to the model
+        $addReviewResult = addReview($invId, $clientId, $reviewText);
+        //Sending a Message to the user letting him now whether the review was added or not.
+        if($addReviewResult === 1){
+           $imprimir= "<p class='message5'>Your review was added successfully.</p>";
+        //    $getReviewArray = functionGetReview($getReviewsByItem);
+           include '../view/product-view.php';
+       } else {
+            $imprimir = "<p class='message5'> Error: Your review was not sent.</p>";
+            include '../view/product-view.php';
+            exit;
+       } 
         // exit;
         // echo gettype($getReviewsByItem);
         // exit;
-        $getReviewArray = functionGetReview($getReviewsByItem);
+        // $getReviewArray = functionGetReview($getReviewsByItem);
         // echo 'hello';
         // exit;
 
-        if (empty($products)) {
-                    echo "<p class='message5'>Sorry, no product was found.</p>";
-                    include '../view/home.php';
-                    exit;
-                }
-                if(empty($reviewText)){
-                    echo '<p class="message5">The review cannot be empty.</p>';
-                    include '../view/product-view.php';
-                    exit;
-                }
-        $addReviewResult = addReview($invId, $clientId, $reviewText);
+        // if (empty($products)) {
+        //             echo "<p class='message5'>Sorry, no product was found.</p>";
+        //             include '../view/home.php';
+        //             exit;
+        //         }
                 
-             if($addReviewResult){
-                $imprimir= "<p class='message5'>Your review was added successfully.</p>";
-                $getReviewArray = functionGetReview($getReviewsByItem);
-                include '../view/product-view.php';
-                
-            } else {
-                 echo "<p class='message5'>Error: Your review was not sent.</p>";
-                 include '../view/product-view.php';
-                 exit;
-            } 
         break;
     case 'edit-review-view':  
          //if user hasn't logged in display log in view
