@@ -69,9 +69,9 @@ switch ($action){
             // Hash the checked password
             $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT); 
             // Send the data to the model
-            $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
             if($regOutcome === 1){
-                setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
+            $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
+                //setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
                 $message = '<p class="message">Thanks for registering '.$clientFirstname.'. Please use your email and password to login.</p>';
                 include '../view/login.php';
                 exit;
@@ -96,6 +96,9 @@ switch ($action){
             // Query the client data based on the email address
             $clientData = getClient($clientEmail);
             // Compare the password just submitted against
+            $clientFirstname = $clientData['clientFirstname'];
+            setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
+            
             // the hashed password for the matching client
             $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
             // If the hashes don't match create an error
@@ -116,15 +119,18 @@ switch ($action){
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
             // Send them to the admin view
-            include '../view/admin.php';
+            header('location: /dashboard/acme/accounts/');
+            // include '../view/admin.php';
             exit;
         break;
         case 'Logout':
             unset($_SESSION['loggedin']);
-            unset($_SESSION['clientData']);
-            setcookie('firstname', '', strtotime('-1 year'), '/');
-            unset($_COOKIE['firstname']);
-            unset($cookieFirstname);
+            // unset($_SESSION['clientData']);
+            session_destroy();
+            setcookie('firstname', $_SESSION['clientData']['clientFirstname'], strtotime('-1 year'), '/');
+            
+            // unset($_COOKIE['firstname']);
+            // unset($cookieFirstname);
             include '../view/home.php';
         exit;
         break;
@@ -185,6 +191,10 @@ switch ($action){
                 exit; 
             }  
         break;  
+        case 'admin':
+        include '../view/admin.php';
+        break;
+
         default:
             //$_SESSION['loggedin'] = FALSE;
         include '../view/admin.php';

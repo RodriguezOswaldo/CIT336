@@ -38,20 +38,48 @@ switch ($action) {
     case 'add-new-review':
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
-        $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
         $clientId = $_SESSION['clientData']['clientId'];
+        // $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+        $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
+        $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
+        $cont = $invId;
+        $products = getProductInfo($cont);
+        $prodDisplay = buildProductsView($products);
+        $prodInfo = getImages();
+        $imprimeImage = buildImageDisplay($prodInfo);
+        $getReviewsByItem = getReviewById($reviewId);
+        // echo getReviewById($reviewId);
+        
+        // exit;
+        // echo gettype($getReviewsByItem);
+        // exit;
+        $getReviewArray = functionGetReview($getReviewsByItem);
+        // echo 'hello';
+        // exit;
+
+        if (empty($products)) {
+                    echo "<p class='message5'>Sorry, no product was found.</p>";
+                    include '../view/home.php';
+                    exit;
+                }
+                if(empty($reviewText)){
+                    echo '<p class="message5">The review cannot be empty.</p>';
+                    include '../view/product-view.php';
+                    exit;
+                }
         $addReviewResult = addReview($invId, $clientId, $reviewText);
                 
-        if ($addReviewResult < 1){
-            $message  = "<p>Please add a review. Please try again.</p>";
-            header("location: /acme/products?action=view-product&id=$invId");
-            exit;
-        }else{
-            $message = "<p>your review was added successfully.</p>";
-            header("location: /acme/products?action=view-product&id=$invId");
-            exit;
-        }
-        
+             if($addReviewResult){
+                $imprimir= "<p class='message5'>Your review was added successfully.</p>";
+                $getReviewArray = functionGetReview($getReviewsByItem);
+                include '../view/product-view.php';
+                
+            } else {
+                 echo "<p class='message5'>Error: Your review was not sent.</p>";
+                 include '../view/product-view.php';
+                 exit;
+            } 
         break;
     case 'edit-review-view':  
          //if user hasn't logged in display log in view

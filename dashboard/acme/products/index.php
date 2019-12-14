@@ -240,7 +240,7 @@ switch ($action){
         $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
         $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
         $products = getProductInfo($invId);
-        //Calling the tumb pic
+        //Calling the thumb pic
         $cont = $invId;
 
         if(!count($products)){

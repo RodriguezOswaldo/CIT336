@@ -54,15 +54,41 @@ $categories = getCategories();
                          ?>
                          <br>
                          <hr>
-                         <?php
-                         echo '<h1>Customer Reviews</h1>';
-                         echo '<p>Please log in <a href=../reviews?action=edit-review-view>here</a> to review this product</p>'
-                
-                         ?>
+                          <h1>Customer Reviews</h1>
+                          <h3>Give your Review for <?php if(isset($prodDisplay)){
+                              echo $products['invName'];
+                          } ?></h3><?php if (isset($message)){
+                            echo $message;
+                        } ?>
+                        <div id="prod-detail"><?php if(isset($prodDetail)){ echo $prodDetail;}
+                        else{
+                            echo 'nothing to display yet, work in progress';
+                        } ?></div>
+                        <hr>
+                        <?php  if (!isset($_SESSION['clientData'])){
+                            echo "<p>Make sure you are <a href='/dashboard/acme/accounts?action=login'>Log in</a> to review this product</p>";
+                        }else{?><div> <form action="/dashboard/acme/reviews/" method="post">
+                            <h2>Add Review</h2>
+                            <label for="reviewText"></label>Name:
+                            <?php echo substr($_SESSION['clientData']['clientFirstname'],0,1). $_SESSION['clientData']['clientLastname']."</label>";?>
+                            <textarea name="reviewText" id="reviewText" cols="30" rows="10" value="<?php echo $cont;?>"></textarea>
+                            <input type="hidden" name="invId" value=<?php echo $cont;?>>
+                            <input type="hidden" name="action" value="add-new-review">
+                            <input type="submit" value="Submit Review">
+                        </form></div><?php 
+                        }if(isset($imprimir)){
+                            echo $imprimir;
+                        }
+                        
+                        ?>
+                        
+                    
+
+                        
         </main>
 
         <footer id="footer">
-            <?php include $_SERVER['DOCUMENT_ROOT']."/dashboard/acme//modules/footer.php"; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT']."/dashboard/acme/modules/footer.php"; ?>
             <p id="lastupdated">Last Updated: <?php echo date('j F, Y', getlastmod()) ?></p>
         </footer>
     </div>

@@ -14,6 +14,7 @@ $categories = getCategories();
 //Common Navigation Bar
 $navList = commonNavigation($categories);
 
+$cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
 /****************************************************************
  *Displaying the navigation list stored in the navList variable *
  ****************************************************************/
