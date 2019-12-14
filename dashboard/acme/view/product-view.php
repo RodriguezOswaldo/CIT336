@@ -77,12 +77,10 @@ $categories = getCategories();
                         </form></div><?php 
                         }if(isset($imprimir)){
                             echo $imprimir;
-                        }
-                        ?>
-                        
-                    
-
-                        
+                        }?>
+                        <hr>
+                        <?php if (isset($reviewArray)) { echo "<h1>Customer Reviews</h1>".$reviewArray; }
+								else { echo "<h1>There are no Reviews for this product</h1>"; } ?>
         </main>
 
         <footer id="footer">

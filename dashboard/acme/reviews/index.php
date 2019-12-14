@@ -49,7 +49,7 @@ switch ($action) {
         $prodDisplay = buildProductsView($products);
         $prodInfo = getImages();
         $imprimeImage = buildImageDisplay($prodInfo);
-        // $newReview = getReviewById($reviewId);
+        $newReview = getReviewById($reviewId);
         // echo getReviewById($reviewId);
         
         if(empty($reviewText)){
@@ -62,7 +62,7 @@ switch ($action) {
         //Sending a Message to the user letting him now whether the review was added or not.
         if($addReviewResult === 1){
            $imprimir= "<p class='message5'>Your review was added successfully.</p>";
-        //    $getReviewArray = functionGetReview($getReviewsByItem);
+           $reviewArray = GetReview($newReview);
            include '../view/product-view.php';
        } else {
             $imprimir = "<p class='message5'> Error: Your review was not sent.</p>";

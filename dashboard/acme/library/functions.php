@@ -293,21 +293,22 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
    } // ends the if - else began on line 36
 
    //Add this function
-//    function functionGetReview($newReview){
-//        echo 'newReview';
-    // $id = '<div id="review-item">';
-    // // echo $getReviewsByItem;
-    //     foreach ($getReviewsByItem as $item) {
-    //         $id.= "<div class='item'><h3>";
-    //         $id.= substr($item['clientFirstname'], 0,1);
-    //         $id .= $item['clientLastname'];
-    //         $id.= " " ."<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>";
-    //         $id.= $item['reviewDate']."</span>" .":". "</h3></div>";
-    //         $id .="<div><p> $item[reviewText]</p>";
-    //         $id .= "</div>";    
+   function GetReview($newReview){
+       echo gettype($newReview);
+       exit;
+    $id = '<div id="review-item">';
+    // echo $getReviewsByItem;
+        foreach ($newReview as $item) {
+            $id.= "<div class='item'><h3>";
+            $id.= substr($item['clientFirstname'], 0,1);
+            $id .= $item['clientLastname'];
+            $id.= " " ."<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>";
+            $id.= $item['reviewDate']."</span>" .":". "</h3></div>";
+            $id .="<div><p> $item[reviewText]</p>";
+            $id .= "</div>";    
          
-    //     } 
-    //     $id .= '</div>';
-    //     return $id;
-    // }
+        } 
+        $id .= '</div>';
+        return $id;
+    }
 ?>
