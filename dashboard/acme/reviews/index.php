@@ -36,12 +36,11 @@ if ($action == NULL){
 }
 switch ($action) {
     case 'add-new-review':
-    // echo 'you made it';
-    // exit;
+        // echo 'you made it';
+        // exit;
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $clientId = $_SESSION['clientData']['clientId'];
-        // $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
         $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
         $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
         $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
@@ -102,25 +101,6 @@ switch ($action) {
         # code...
         break;
     case 'delete-review':
-        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
-        $review = getReviewById($reviewId);
-        if (empty($review)) {
-                $message = "Sorry, review could not be found";
-                header('location: /acme/accounts');
-                exit;
-        }
-        
-        $deleteReviewResult = deleteReview($reviewId);
-                
-        if ($deleteReviewResult < 1) {
-                $message = "<p>Sorry, but your review wasn't deleted. Please try again.</p>";
-                include '/view/review-delete.php';
-                exit;
-        } else{
-                $message = "<p>your review was deleted successfully.</p>";
-                header('location: /accounts');
-                exit;
-        } 
         break;
     default:
         if (isset($_SESSION['loggedin'])) {
