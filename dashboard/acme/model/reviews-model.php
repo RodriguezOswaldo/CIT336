@@ -35,15 +35,36 @@ function getReviewsByClientId($clientId) {
     return $reviews;
 }
 //Get a specific review
-function getReviewById($invId) {
+function getReviewById($reviewId){
     $db = acmeConnect();
-    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.invId = :invId';
+    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.reviewId = :reviewId';   
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
     $stmt->execute();
     $review = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $review;
 }
+function updateReview($reviewId, $reviewText) {
+    $db = acmeConnect();
+    $sql = 'UPDATE reviews SET reviewText = :reviewText WHERE reviewId = :reviewId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
+    $stmt->bindValue(':reviewText', $reviewText, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
 
+function deleteReview($reviewId) {
+    $db = acmeConnect();
+    $sql = 'DELETE FROM reviews WHERE reviewId = :reviewId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
 ?>

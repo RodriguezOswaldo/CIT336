@@ -303,10 +303,25 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
             $id.= substr($item['clientFirstname'], 0,1). " ". $item['clientLastname']. " " ."<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>";
             $id.= $item['reviewDate']."</span>" .":". "</h3></div>";
             $id .="<div><p> $item[reviewText]</p>";
+            $id .= "<a href='../reviews/index.php?action=edit-review-view&id=$item[reviewId]'>Edit</a>". " | "."<a href='../reviews/index.php?action=delete-review&id=$item[reviewId]'>Delete</a>" ;
+            // $id .= "<a href ='../products?action=view-product&id=$product[invId]'><h2>$product[invName]</h2></a>";
             $id .= "</div>";    
          
         } 
         $id .= '</div>';
         return $id;
+    }
+    function displayClient($reviewByClient){
+        $id = '<div id="review-item">';
+        foreach ($reviewByClient as $item) {
+            $id.= "<div class='item'><h3>";
+            $id.= "<div><h3>". $item['invName']." ". "<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>". $item['reviewDate']."</span>" .":"." ";
+            $id.= "<div>".$item['reviewText']. "</div>";
+            // $id.=  "<a href='../reviews/index.php?action=update-review&id=$item[reviewId]'>Edit</a>". " ". " | ". "<a href='../reviews/index.php?action=delete-review&id=$item[reviewId]'>Delete</a></h3></div>";
+            $id.= "</div>";
+        } 
+        $id .= '</div>';
+        return $id;
+
     }
 ?>

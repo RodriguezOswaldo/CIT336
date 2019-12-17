@@ -11,6 +11,7 @@ session_start();
  require_once '../model/acme-model.php';
  
  require_once '../model/products-model.php';
+ require_once '../model/accounts-model.php';
  //Get the custom functions 
  require_once '../library/functions.php';
 
@@ -245,8 +246,18 @@ switch ($action){
         //Calling the thumb pic
         $cont = $invId;
         $newReview = getReviewsByInvId($cont);
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL );
+        $clientData = getClient($clientEmail);
+        $cookieFirstname = $_SESSION['clientData']['clientFirstname'];
+        $clientId = $_SESSION['clientData']['clientId'];
+        $reviewByClient = getReviewsByClientId($clientId);
+        $reviewArray = displayClient($reviewByClient);
+        //if(isset($_SESSION['message'])){
+          //  echo $_SESSION['message'];
+            //$_SESSION['message'] = " ";
+         //}      
 
-        $getReviewsByItem = getReviewId($invId);
+        $getReviewsByItem = getReviewById($invId);
         if(!$newReview){
             $reviewArray = "This product has not reviews ";
         }
@@ -255,7 +266,7 @@ switch ($action){
         }
 
 
-        if(!count($products)){
+        if(empty($products)){
             $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
         } else {
             $prodDisplay = buildProductsView($products);

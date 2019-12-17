@@ -8,6 +8,7 @@ Accounts Controller
 require_once '../library/connections.php';
 // Get the acme model for use as needed
 require_once '../model/acme-model.php';
+require_once '../model/reviews-model.php';
 //Get the accounts model
 require_once '../model/accounts-model.php';
 //Get the custom functions 
@@ -192,7 +193,18 @@ switch ($action){
             }  
         break;  
         case 'admin':
-        include '../view/admin.php';
+            $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL );
+            $clientData = getClient($clientEmail);
+            $cookieFirstname = $_SESSION['clientData']['clientFirstname'];
+            $clientId = $_SESSION['clientData']['clientId'];
+            $reviewByClient = getReviewsByClientId($clientId);
+            $reviewArray = displayClient($reviewByClient);
+            //if(isset($_SESSION['message'])){
+            //  echo $_SESSION['message'];
+                //$_SESSION['message'] = " ";
+            //}      
+            include '../view/admin.php';
+            exit;
         break;
 
         default:

@@ -21,12 +21,7 @@ if (isset($_SESSION['loggedin'])) {
     if (!$_SESSION['loggedin'] == TRUE) {
         include "../view/home.php";
         exit;
-    }
-
-
-
-
-?>
+    }?>
 <!doctype html>
 <html lang="en">
 
@@ -58,17 +53,19 @@ if (isset($_SESSION['loggedin'])) {
             <li><strong>Last Name: </strong><?php echo $_SESSION['clientData']['clientLastname']; ?></li>
             <li><strong>Email Account: </strong><?php echo $_SESSION['clientData']['clientEmail']; ?></li>
         </ul>
-        <?php
-              
-        ?> <h3><a href="../accounts/index.php?action=update"> Update Account Information </a></h3><br><?php if( $_SESSION['clientData']['clientLevel'] > 1) { 
+       <h3><a href="../accounts/index.php?action=update"> Update Account Information </a></h3>
+        <br><?php if( $_SESSION['clientData']['clientLevel'] > 1) { 
             echo "<h2 class ='letras'>Administrative Functions</h2><br>";
             echo "<h3>Use the link below to manage products</h3><br>";
-              
-            if ($_SESSION['clientData']['clientLevel'] > 1) {
-                echo '<p><a href="/dashboard/acme/products/">Go to Products Management</a></p>';
+            echo "<p><a href='/dashboard/acme/products/'>Go to Products Management</a></p>";
+            echo "<br>";
+            echo "<hr><br>"; 
             }
-            
-         }?>
+            echo "<h2>Manage Your product reviews</h2>";
+            if(isset($reviewArray)){
+              echo $reviewArray;
+          }         
+        ?>
         </main>
 
         <footer id="footer">

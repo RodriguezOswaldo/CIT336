@@ -36,8 +36,6 @@ if ($action == NULL){
 }
 switch ($action) {
     case 'add-new-review':
-        // echo 'you made it';
-        // exit;
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $clientId = $_SESSION['clientData']['clientId'];
@@ -71,39 +69,101 @@ switch ($action) {
             include '../view/product-view.php';
             exit;
        } 
-        // exit;
-        // echo gettype($getReviewsByItem);
-        // exit;
-        // $getReviewArray = functionGetReview($getReviewsByItem);
-        // echo 'hello';
-        // exit;
-
-        // if (empty($products)) {
-        //             echo "<p class='message5'>Sorry, no product was found.</p>";
-        //             include '../view/home.php';
-        //             exit;
-        //         }
-                
         break;
     case 'edit-review-view':  
-         //if user hasn't logged in display log in view
-        if (isset($_SESSION['loggedin'])) {
-            
-        } else {
-            $_SESSION['loggedin'] = FALSE;
-            include "../view/login.php";
+        $reviewId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);    
+        if(empty($reviewId)){
+            $imprimir= "<p class='message5'>There are not existing reviews yet, be the first to review this product!..</p>";
+            header('location: /acme/accounts?action=admin');
+            exit;
         }
-        if (!$_SESSION['loggedin'] == TRUE) {
-        } 
+        $gettingReview = getReviewById($reviewId);
+        // echo gettype($gettingReview);
+        // exit;
+        if(empty($gettingReview)){
+            $imprimir= "<p class='message5'>There are not existing reviews yet!..</p>";
+            header('location: /acme/accounts?action=admin');
+            exit;
+        }
+        include '../view/update-review.php';
         break;
     case 'submit-review-updated':
-        # code... 
+        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);    
+        $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
+        $gettingReview = getReviewById($reviewId);
+        $clientId = $_SESSION['clientData']['clientId'];
+        $reviewByClient = getReviewsByClientId($clientId);
+        $reviewArray = displayClient($reviewByClient);
+        
+        if (empty($gettingReview)) {
+            $_SESSION['message'] = "Sorry, review could not be found";
+            header('location: /view/home.php');
+            exit;
+        }
+       // Check for missing data
+       if(empty($reviewText)){
+        $message = '<p>The review cannot be empty.</p>';
+       
+        include ($_SERVER['DOCUMENT_ROOT'].'/view/update-review.php');
+        exit;
+         }
+         // Send the update to the model with the updateReview function
+         $updateReviewResult = updateReview($reviewId, $reviewText);
+
+         if ($updateReviewResult < 1) { 
+            $message = "<p class ='message5'>No changes were made.</p>";
+            include ($_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/view/update-review.php');
+            exit;
+            }else{
+                        
+                    // $message= "<p class='message5'>Your review was updated successfully.</p>";
+                        $_SESSION['message'] = "<p class='message5'>Your review was updated successfully.</p>";
+                    // include ($_SERVER['DOCUMENT_ROOT'].'/accounts/index.php?action="admin"');
+                        header("location:/dashboard/acme/accounts?action=admin");
+                        exit;
+                    }      
         break;
-    case 'display-review-updated':
-        # code...
+    case 'delete-review':   
+        echo 'You made it!';
+        $reviewId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);    
+        if(empty($reviewId)){
+            $imprimir= "<p class='message5'>There are not existing reviews yet, be the first to review this product!..</p>";
+            header('location: /acme/accounts?action=admin');
+            exit;
+        }
+        $gettingReview = getReviewById($reviewId);
+        // echo gettype($gettingReview);
+        // exit;
+        if(empty($gettingReview)){
+            $imprimir= "<p class='message5'>There are not existing reviews yet!..</p>";
+            header('location: /acme/accounts?action=admin');
+            exit;
+        }
+        include '../view/delete-review.php';
         break;
-    case 'delete-review':
-        break;
+    case 'delete-review-submit':
+        echo 'you made it again';
+        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);    
+        $gettingReview = getReviewById($reviewId);
+        
+        if (empty($gettingReview)) {
+            $_SESSION['message'] = "Sorry, review could not be found";
+            header('location: /acme/accounts?action=admin');
+            exit;
+        }
+
+        $delete = deleteReview($reviewId);
+        if (($delete < 1)) {
+            $_SESSION['message'] = "Sorry, review could not be found";
+            header('location: /acme/accounts?action=admin');
+            exit;
+        }else{
+            $_SESSION['message'] = "Review has been removed from the database.";
+
+        }
+        header("location:/dashboard/acme/accounts?action=admin");
+        exit;
+    break;
     default:
         if (isset($_SESSION['loggedin'])) {
             include "../view/admin.php";
