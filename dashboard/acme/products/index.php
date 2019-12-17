@@ -15,6 +15,8 @@ session_start();
  require_once '../library/functions.php';
 
  require_once '../model/uploads-model.php';
+ require_once '../model/reviews-model.php';
+ 
 
  // Get the array of categories
 $categories = getCategories();
@@ -242,6 +244,16 @@ switch ($action){
         $products = getProductInfo($invId);
         //Calling the thumb pic
         $cont = $invId;
+        $newReview = getReviewsByInvId($cont);
+
+        $getReviewsByItem = getReviewId($invId);
+        if(!$newReview){
+            $reviewArray = "This product has not reviews ";
+        }
+        else {
+        $reviewArray = GetReview($newReview); 
+        }
+
 
         if(!count($products)){
             $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";

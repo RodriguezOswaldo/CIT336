@@ -288,21 +288,19 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
      // Write the old image to a new file
      $image_to_file($old_image, $new_image_path);
      }
+     
      // Free any memory associated with the old image
      imagedestroy($old_image);
    } // ends the if - else began on line 36
 
    //Add this function
    function GetReview($newReview){
-       echo gettype($newReview);
-       exit;
     $id = '<div id="review-item">';
-    // echo $getReviewsByItem;
         foreach ($newReview as $item) {
+            // echo gettype($item);
+            // exit;
             $id.= "<div class='item'><h3>";
-            $id.= substr($item['clientFirstname'], 0,1);
-            $id .= $item['clientLastname'];
-            $id.= " " ."<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>";
+            $id.= substr($item['clientFirstname'], 0,1). " ". $item['clientLastname']. " " ."<span class='fecha'>wrote on</span>"." ". "<span class='fecha'>";
             $id.= $item['reviewDate']."</span>" .":". "</h3></div>";
             $id .="<div><p> $item[reviewText]</p>";
             $id .= "</div>";    

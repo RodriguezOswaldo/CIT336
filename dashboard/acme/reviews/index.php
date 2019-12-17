@@ -41,7 +41,7 @@ switch ($action) {
         // Filter and store the data
         $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $clientId = $_SESSION['clientData']['clientId'];
-        $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+        // $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
         $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
         $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
         // $cont = $invId;
@@ -49,7 +49,8 @@ switch ($action) {
         $prodDisplay = buildProductsView($products);
         $prodInfo = getImages();
         $imprimeImage = buildImageDisplay($prodInfo);
-        $newReview = getReviewById($reviewId);
+        $newReview = getReviewsByInvId($invId);
+        $reviewArray = GetReview($newReview);
         // echo getReviewById($reviewId);
         
         if(empty($reviewText)){
@@ -61,8 +62,9 @@ switch ($action) {
         $addReviewResult = addReview($invId, $clientId, $reviewText);
         //Sending a Message to the user letting him now whether the review was added or not.
         if($addReviewResult === 1){
-           $imprimir= "<p class='message5'>Your review was added successfully.</p>";
-           $reviewArray = GetReview($newReview);
+            $imprimir= "<p class='message5'>Your review was added successfully.</p>";
+            $newReview = getReviewsByInvId($invId);
+            $reviewArray = GetReview($newReview);
            include '../view/product-view.php';
        } else {
             $imprimir = "<p class='message5'> Error: Your review was not sent.</p>";

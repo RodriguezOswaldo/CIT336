@@ -15,7 +15,7 @@ function addReview($invId, $clientId, $reviewText) {
 //Get reviews for a specific inventory item
 function getReviewsByInvId($invId) {
     $db = acmeConnect();
-    $sql = 'SELECT * FROM reviews AS r INNER JOIN clients AS c ON r.clientId = c.clientId WHERE r.invId = :invId ORDER BY reviewUpdateDate DESC';
+    $sql = 'SELECT * FROM reviews AS r INNER JOIN clients AS c ON r.clientId = c.clientId WHERE r.invId = :invId ORDER BY reviewDate DESC';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
@@ -26,7 +26,7 @@ function getReviewsByInvId($invId) {
 //Get reviews written by a specific client
 function getReviewsByClientId($clientId) {
     $db = acmeConnect();
-    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.clientId = :clientId ORDER BY reviewUpdateDate DESC';
+    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.clientId = :clientId ORDER BY reviewDate DESC';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
     $stmt->execute();
@@ -35,11 +35,11 @@ function getReviewsByClientId($clientId) {
     return $reviews;
 }
 //Get a specific review
-function getReviewById($reviewId) {
+function getReviewById($invId) {
     $db = acmeConnect();
-    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.reviewId = :reviewId';
+    $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.invId = :invId';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
     $review = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
