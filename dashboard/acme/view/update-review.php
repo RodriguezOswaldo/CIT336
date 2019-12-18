@@ -36,20 +36,21 @@ $categories = getCategories();
         </nav>
 
         <main>
-  
-  <form method="post" action="/dashboard/acme/reviews/index.php">
-    <h1><?php echo "$gettingReview[invName] Review"; ?></h1><br>
-        <?php if (isset($message)) { echo $message; } ?>
-        <h2><label for="reviewText" ><?php echo "Reviewed on " , date('M d, Y', strtotime($gettingReview['reviewDate'])); ?></label></h2><br><br>
-        <h3>Review Text</h3>
-        <textarea name="reviewText" id="reviewText" title="Review Text" class="textArea" required><?php 
-        if (isset($reviewText)) { echo $reviewText; }
-        else { echo $gettingReview['reviewText']; } ?></textarea>
-        <!-- Add the action name - value pair -->
-        <input type="hidden" name="action" value="submit-review-updated" >
-        <input type="hidden" name="reviewId" value="<?php if (isset($reviewId)) { echo $reviewId; } ?>">
-        <input type="submit" value="Update Review" class="log1">
-	</form>
+  <div class="add-review"> 
+    <form method="post" action="/dashboard/acme/reviews/index.php">
+        <h1><?php echo "$gettingReview[invName] Review"; ?></h1><br>
+            <?php if (isset($message)) { echo $message; } ?>
+            <h2><label for="reviewText" ><?php echo "Reviewed on " , date('M d, Y', strtotime($gettingReview['reviewDate'])); ?></label></h2><br><br>
+            <h3>Review Text</h3>
+            <textarea name="reviewText" id="reviewText" title="Review Text" class="textArea" required><?php 
+            if (isset($reviewText)) { echo $reviewText; }
+            else { echo $gettingReview['reviewText']; } ?></textarea>
+            <!-- Add the action name - value pair -->
+            <input type="hidden" name="action" value="submit-review-updated" >
+            <input type="hidden" name="reviewId" value="<?php if (isset($reviewId)) { echo $reviewId; } ?>"><br>
+            <input type="submit" value="Update Review" class="log1">
+        </form>
+    </div>
    <?php if(isset($imprimir)){
        echo $imprimir;
     }

@@ -52,7 +52,7 @@ switch ($action) {
         // echo getReviewById($reviewId);
         
         if(empty($reviewText)){
-            echo '<p class="message5">The review cannot be empty.</p>';
+            echo '<p class="message">The review cannot be empty.</p>';
             include '../view/product-view.php';
             exit;
         }
@@ -60,12 +60,12 @@ switch ($action) {
         $addReviewResult = addReview($invId, $clientId, $reviewText);
         //Sending a Message to the user letting him now whether the review was added or not.
         if($addReviewResult === 1){
-            $imprimir= "<p class='message5'>Your review was added successfully.</p>";
+            $imprimir= "<p class='message'>Your review was added successfully.</p>";
             $newReview = getReviewsByInvId($invId);
             $reviewArray = GetReview($newReview);
            include '../view/product-view.php';
        } else {
-            $imprimir = "<p class='message5'> Error: Your review was not sent.</p>";
+            $imprimir = "<p class='message'> Error: Your review was not sent.</p>";
             include '../view/product-view.php';
             exit;
        } 
@@ -73,7 +73,7 @@ switch ($action) {
     case 'edit-review-view':  
         $reviewId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);    
         if(empty($reviewId)){
-            $imprimir= "<p class='message5'>There are not existing reviews yet, be the first to review this product!..</p>";
+            $imprimir= "<p class='message'>There are not existing reviews yet, be the first to review this product!..</p>";
             header('location: /acme/accounts?action=admin');
             exit;
         }
@@ -81,7 +81,7 @@ switch ($action) {
         // echo gettype($gettingReview);
         // exit;
         if(empty($gettingReview)){
-            $imprimir= "<p class='message5'>There are not existing reviews yet!..</p>";
+            $imprimir= "<p class='message'>There are not existing reviews yet!..</p>";
             header('location: /acme/accounts?action=admin');
             exit;
         }
@@ -111,23 +111,22 @@ switch ($action) {
          $updateReviewResult = updateReview($reviewId, $reviewText);
 
          if ($updateReviewResult < 1) { 
-            $message = "<p class ='message5'>No changes were made.</p>";
+            $message = "<p class ='message'>No changes were made.</p>";
             include ($_SERVER['DOCUMENT_ROOT'].'/dashboard/acme/view/update-review.php');
             exit;
             }else{
                         
                     // $message= "<p class='message5'>Your review was updated successfully.</p>";
-                        $_SESSION['message'] = "<p class='message5'>Your review was updated successfully.</p>";
+                        $_SESSION['message'] = "<p class='message'>Your review was updated successfully.</p>";
                     // include ($_SERVER['DOCUMENT_ROOT'].'/accounts/index.php?action="admin"');
                         header("location:/dashboard/acme/accounts?action=admin");
                         exit;
                     }      
         break;
     case 'delete-review':   
-        echo 'You made it!';
         $reviewId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);    
         if(empty($reviewId)){
-            $imprimir= "<p class='message5'>There are not existing reviews yet, be the first to review this product!..</p>";
+            $imprimir= "<p class='message'>There are not existing reviews yet, be the first to review this product!..</p>";
             header('location: /acme/accounts?action=admin');
             exit;
         }
@@ -135,7 +134,7 @@ switch ($action) {
         // echo gettype($gettingReview);
         // exit;
         if(empty($gettingReview)){
-            $imprimir= "<p class='message5'>There are not existing reviews yet!..</p>";
+            $imprimir= "<p class='message'>There are not existing reviews yet!..</p>";
             header('location: /acme/accounts?action=admin');
             exit;
         }

@@ -48,10 +48,9 @@ $categories = getCategories();
                   if(isset($printImage)){
                             echo $printImage;
                         }else{
-                            echo 'There is not an image for this product';
+                            echo '<div class="space">There are not existing thumbnail images for this product</div>';
                         }
                          ?>
-                         <br>
                          <hr>
                           <h1>Customer Reviews</h1>
                           <h3>Give your Review for <?php if(isset($prodDisplay)){
@@ -60,21 +59,20 @@ $categories = getCategories();
                             echo $message;
                         } ?>
                         <div id="prod-detail"><?php if(isset($prodDetail)){ echo $prodDetail;}
-                        else{
-                            echo 'nothing to display yet, work in progress';
-                        } ?></div>
-                        <hr>
+                        ?></div>
                         <?php  if (!isset($_SESSION['clientData'])){
                             echo "<p>Make sure you are <a href='/dashboard/acme/accounts?action=login'>Log in</a> to review this product</p>";
-                        }else{?><div> <form action="/dashboard/acme/reviews/" method="post">
-                            <h2>Add Review</h2>
-                            <label class="labels" for="reviewText"></label>Name:
-                            <?php echo substr($_SESSION['clientData']['clientFirstname'],0,1)."."." " . $_SESSION['clientData']['clientLastname']."</label>";?><br>
-                            <textarea name="reviewText" id="reviewText" cols="30" rows="4" value="<?php echo $cont;?>"></textarea><br>
-                            <input type="hidden" name="invId" value=<?php echo $invId; ?>>
-                            <input type="hidden" name="action" value="add-new-review">
-                            <input type="submit" value="Submit Review">
-                        </form></div><?php 
+                        }else{?><div class="add-review">
+                                    <form action="/dashboard/acme/reviews/" method="post">
+                                        <h2>Add Review</h2>
+                                        <label class="labels" for="reviewText">Name:</label>
+                                        <?php echo substr($_SESSION['clientData']['clientFirstname'],0,1)."."." " . $_SESSION['clientData']['clientLastname']."</label>";?><br>
+                                        <textarea placeholder="Click to add your review here" name="reviewText" id="reviewText" cols="30" rows="4" value="<?php echo $cont;?>"></textarea><br>
+                                        <input type="hidden" name="invId" value=<?php echo $invId; ?>>
+                                        <input type="hidden" name="action" value="add-new-review">
+                                        <input type="submit" value="Submit Review">
+                                    </form>
+                                </div><?php 
                         }if(isset($imprimir)){
                             echo $imprimir;
                         }?>

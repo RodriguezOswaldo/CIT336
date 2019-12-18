@@ -179,8 +179,87 @@ footer, #lastupdated{
     box-sizing:border-box;
     border: 1px solid #de2226;
     box-shadow: 2px 2px 3px #de2226;
-
     transform:scale(0.7); 
+}
+.add-review{
+    margin:10px;
+}
+.add-review .labels{
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.message{
+    margin:10px;
+    color: #de2226;
+}
+.space{
+    margin: 10px;
+}
+.test{
+    background: gray;
+}
+.add-review input[type="submit"]
+{
+    margin: 0 auto 20px auto; 
+    text-align: center;
+    width: 35%;
+    border-radius: 10px;
+    background: #de2226;
+    border:none;
+    font-size:1.3em;
+    padding:5px 0 5px 0;
+    color:#fff;
+}
+.reviews{
+    background: #f6f098;
+    margin:10px;
+    font-size: 1em;
+    padding:10px;
+}
+.edit{
+  color:#28a745;
+  border-color:#28a745;
+
+}
+.edit:hover{
+    color:#fff;
+    background-color:#28a745;
+    border-color:#28a745;
+}
+.delete{
+    color:#dc3545;
+    border-color:#dc3545;
+    border-radius: 4px;
+}
+.delete:hover{
+    color:#fff;
+    background-color:#dc3545;
+    border-color:#dc3545
+}
+.reviewer{
+    background:#fff;
+}
+.delete-review{
+    margin: 0 auto 20px auto; 
+    text-align: center;
+    width: 35%;
+    border-radius: 10px;
+    background: #de2226;
+    border:none;
+    font-size:1.3em;
+    padding:5px 0 5px 0;
+    color:#fff;
+
+}
+.add-review textarea{
+        text-align: initial;
+        width: 50%;
+        border: 1px solid #de2226;
+        outline: none;
+        border-bottom: 1px solid #de2226;
+        font-size: 1.2em;
+        font-family: 'Courier New', Courier, monospace;
+    
 }
 .products{
     height: 863px;

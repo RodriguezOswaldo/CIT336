@@ -31,7 +31,7 @@ if (!$_SESSION['loggedin'] == TRUE) {
         if(isset($cookieFirstname)){
         echo "<span>Welcome $cookieFirstname</span>";
         } ?> <img class="account" src="/dashboard/acme/images/site/account.jpg" title="My Account Menu" alt="My Account Folder"></a>
-        <a href="<?php echo $GLOBALS['loginlink'];?>"><span><?php echo $GLOBALS['NameLink'];?></span></a>
+        <a href="<?php echo $GLOBALS['loginlink'];?>"><span><?php echo $GLOBALS['NameLink'];?></span></a></div>
         <?php
 }
 

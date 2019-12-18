@@ -70,8 +70,8 @@ switch ($action){
             // Hash the checked password
             $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT); 
             // Send the data to the model
-            if($regOutcome === 1){
             $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
+            if($regOutcome === 1){
                 //setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
                 $message = '<p class="message">Thanks for registering '.$clientFirstname.'. Please use your email and password to login.</p>';
                 include '../view/login.php';
