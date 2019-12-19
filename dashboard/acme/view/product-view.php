@@ -39,10 +39,13 @@ $categories = getCategories();
         <h1><?php echo $categoryName; ?> Products</h1>
             <?php if(isset($message)){
                 echo $message; } 
-            ?>
+            ?> <?php if(isset($imprimir)){
+                echo $imprimir;
+            }?>
                 <?php if(isset($prodDisplay)){ 
                     echo $prodDisplay; 
                 } ?>
+               
                 <hr>
                  <?php
                   if(isset($printImage)){
@@ -51,6 +54,7 @@ $categories = getCategories();
                             echo '<div class="space">There are not existing thumbnail images for this product</div>';
                         }
                          ?>
+                        
                          <hr>
                           <h1>Customer Reviews</h1>
                           <h3>Give your Review for <?php if(isset($prodDisplay)){
@@ -73,8 +77,6 @@ $categories = getCategories();
                                         <input type="submit" value="Submit Review">
                                     </form>
                                 </div><?php 
-                        }if(isset($imprimir)){
-                            echo $imprimir;
                         }?>
                         <hr>
                         <?php if (isset($reviewArray)) { echo "<h1>Customer Reviews</h1>".$reviewArray; }

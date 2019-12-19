@@ -225,6 +225,7 @@ footer, #lastupdated{
     color:#fff;
     background-color:#28a745;
     border-color:#28a745;
+    border-radius: 4px;
 }
 .delete{
     color:#dc3545;

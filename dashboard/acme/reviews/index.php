@@ -60,7 +60,7 @@ switch ($action) {
         $addReviewResult = addReview($invId, $clientId, $reviewText);
         //Sending a Message to the user letting him now whether the review was added or not.
         if($addReviewResult === 1){
-            $imprimir= "<p class='message'>Your review was added successfully.</p>";
+            $imprimir= "<p class='message'>Your review was added successfully. Scroll down to check it out!</p>";
             $newReview = getReviewsByInvId($invId);
             $reviewArray = GetReview($newReview);
            include '../view/product-view.php';
