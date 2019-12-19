@@ -162,7 +162,7 @@ switch ($action) {
         }
         header("location:/dashboard/acme/accounts?action=admin");
         exit;
-    break;
+        break;
     default:
         if (isset($_SESSION['loggedin'])) {
             include "../view/admin.php";

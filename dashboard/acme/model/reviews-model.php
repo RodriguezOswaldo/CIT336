@@ -56,7 +56,6 @@ function updateReview($reviewId, $reviewText) {
     $stmt->closeCursor();
     return $rowsChanged;
 }
-
 function deleteReview($reviewId) {
     $db = acmeConnect();
     $sql = 'DELETE FROM reviews WHERE reviewId = :reviewId';
