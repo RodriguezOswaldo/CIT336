@@ -83,6 +83,7 @@ switch ($action){
             }
         break;    
         case 'Login':
+            setcookie('firstname', '', strtotime('-1 year'), '/');
             $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
             $clientEmail = checkEmail($clientEmail);
             $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
@@ -98,7 +99,6 @@ switch ($action){
             $clientData = getClient($clientEmail);
             // Compare the password just submitted against
             $clientFirstname = $clientData['clientFirstname'];
-            setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
             
             // the hashed password for the matching client
             $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
@@ -119,6 +119,7 @@ switch ($action){
             array_pop($clientData);
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
+            setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
             // Send them to the admin view
             header('location: /dashboard/acme/accounts/');
             // include '../view/admin.php';
