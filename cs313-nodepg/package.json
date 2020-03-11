@@ -1,0 +1,24 @@
+{
+  "name": "cs313-nodepg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodriguezOswaldo/CS313-Node-pg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RodriguezOswaldo/CS313-Node-pg/issues"
+  },
+  "homepage": "https://github.com/RodriguezOswaldo/CS313-Node-pg#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^7.18.2"
+  }
+}
